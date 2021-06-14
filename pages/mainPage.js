@@ -14,6 +14,10 @@ import {
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
+const screenWidth = Dimensions.get("window").width;
+const numColumns = 14;
+const tileSize = 7*screenWidth/16;
+
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Image
@@ -33,8 +37,8 @@ export default function MainPage({navigation}) {
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
-      const backgroundColor = item.id === selectedId ? "darkblue" : "darkgreen";
-      const color = item.id === selectedId ? 'white' : 'white';
+      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#21a0a0";
+      const color = item.id === selectedId ? 'black' : 'black';
   
       return (
         <Item
@@ -67,16 +71,20 @@ return (
       justifyContent: 'center',
     },
     item: {
-      backgroundColor: 'darkblue',
+      backgroundColor: "#dc8db9",
       width: "40%",
       height: 360,
       textAlign: 'center',
       marginVertical: 8,
-      marginHorizontal: 16,
+      marginHorizontal: 8,
+      height: tileSize, 
+      width: tileSize, 
+      padding: 2,
+      alignContent: "center"
     },
     title: {
       padding: 5,
-      fontSize: 15,
+      flex: 1,
       textAlign: 'center',
     },
     thumbnails: {
