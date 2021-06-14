@@ -20,6 +20,7 @@ global.bookmarked = [
 ];
 
 global.selectedArticle = 0;
+global.bookmarkedArticle = [];
 
 global.fakeFeed = [
     {
