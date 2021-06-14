@@ -69,7 +69,7 @@ export default function Preferences({navigation}) {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.eventsHeader}>Preferences Here</Text>
+        <Text style={styles.eventsHeader}>Select your preferences</Text>
         <FlatList
             data={PREFERENCES_TOPIC}
             renderItem={renderItem}
