@@ -12,7 +12,7 @@ import {
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-export default function MainPage() {
+export default function MainPage({navigation}) {
     return (
       <View style={styles.container}>
         <Text>This is the main page!</Text>

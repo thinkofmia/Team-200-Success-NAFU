@@ -13,12 +13,8 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>,
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home"> 
         <Stack.Screen name="Home" component={MainPage}/>
         <Stack.Screen name="SingleDisplay" component={SingleDisplay}/>
       </Stack.Navigator>
