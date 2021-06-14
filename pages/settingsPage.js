@@ -46,7 +46,7 @@ const styles=StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: appConsumer.theme.colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
   },
