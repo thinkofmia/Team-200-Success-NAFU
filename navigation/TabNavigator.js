@@ -15,7 +15,7 @@ const BottomTabNavigator = () => {
           let iconName;
 
           if (route.name === 'Settings') {
-            iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
+            iconName = focused ? 'ios-settings' : 'ios-settings-outline';
           } 
           else if (route.name === 'Home') {
             iconName = focused ? 'ios-home' : 'ios-home-outline';
