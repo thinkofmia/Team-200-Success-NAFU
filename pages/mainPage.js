@@ -13,13 +13,9 @@ import {
 
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
 
 const screenWidth = Dimensions.get("window").width;
-const numColumns = 14;
 const tileSize = 7*screenWidth/16;
-let article_bookmarked = false;
 
 const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeState, bookmarkBoolean}) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
@@ -40,15 +36,39 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
 );
 
 export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
-  article_bookmarked = global.bookmarkedArticle.includes(item, true)
-  console.log("check bookmarked?", article_bookmarked);
-  if (!article_bookmarked){
-    global.bookmarkedArticle.push(item);
+  let itemList = global.bookmarkedArticle;
+  // console.log("itemid", item.id);
+  let itemExists = checkItemExists(itemList, item)
+  // console.log("item exsits?", itemExists);
+  if (!itemExists){
+    itemList.push(item);
   } else {
-    global.bookmarkedArticle.pop(item);
+    let itemIndex = getIndexOf(itemList, item);
+    itemList.splice(itemIndex, 1);
   }
+  // console.log('see global', itemList);
   changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
 };
+
+function getAllIDs(itemList){
+  let idList = itemList.map((item) => {
+    return item.id;
+  });
+  return idList;
+}
+
+function getIndexOf(itemList, item){
+  return itemList.indexOf(item, 0);
+}
+
+function checkItemExists(itemList, item){
+  let idList = getAllIDs(itemList);
+  console.log("idlist", idList);
+  if (idList.includes(item.id)){
+    return true;
+  }
+  return false;
+}
 
 export default function MainPage({navigation}) {
   const [selectedId, setSelectedId] = useState(null);

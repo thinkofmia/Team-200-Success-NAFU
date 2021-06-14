@@ -16,9 +16,6 @@ const Item = ({ item, onPress }) => (
         />
     <View style={styles.textContent}>
       <Text style={styles.title}>{item.title}</Text>
-      <TouchableHighlight onPress={changeBookmarkState(item)}>
-        <Ionicons size={30} color="#fff" style={styles.bookmarks} name='ios-bookmarks' />
-      </TouchableHighlight>
     </View>
   </TouchableOpacity>
 );
