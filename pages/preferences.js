@@ -55,9 +55,16 @@ export default function Preferences({navigation}) {
           <Item
             item={item}
             onPress={() => {
-              if(!(global.userPreferences.includes(item.title))) global.userPreferences.push(item.title);
-              else if (global.userPreference.indexOf(item.title) > -1) {global.userPreferences.splice(index, 1);
-            }}}
+              var index = global.userPreferences.indexOf(item.title);
+              if (index > -1) {global.userPreferences.splice(index, 1);
+                console.log(global.userPreferences);
+            }
+              else global.userPreferences.push(item.title);
+
+              navigation.navigate('Preferences');
+          }
+          
+        }
             backgroundColor={{ backgroundColor }}
             textColor={{ color }}
           />
