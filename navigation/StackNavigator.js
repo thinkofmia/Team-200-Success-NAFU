@@ -14,7 +14,6 @@ const MainStackNavigator = () => {
         <Stack.Navigator>
         <Stack.Screen name="Home" component={MainPage}/>
         <Stack.Screen name="SingleDisplay" component={SingleDisplay}/>
-        <Stack.Screen name="Preferences" component={Preferences}/>
     </Stack.Navigator>
     );
   }
@@ -31,6 +30,7 @@ const MainStackNavigator = () => {
     return (
       <Stack.Navigator>
         <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Preferences" component={Preferences}/>
       </Stack.Navigator>
     );
   }

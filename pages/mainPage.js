@@ -92,10 +92,6 @@ return (
           extraData={selectedId}
           numColumns={2}
     />
-    <Button
-          title="Select Your Preferences"
-          onPress={() => navigation.navigate('Preferences')}
-        />
   </View>
   );
   }

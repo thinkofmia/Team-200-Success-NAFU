@@ -5,6 +5,10 @@ export default function Settings({navigation}) {
   return (
     <View style={styles.container}>
         <Text style={styles.eventsHeader}>This is the settings page</Text>
+        <Button
+          title="Select Your Preferences"
+          onPress={() => navigation.navigate('Preferences')}
+        />
     </View>
     );
   }
