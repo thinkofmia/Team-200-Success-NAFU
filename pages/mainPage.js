@@ -30,6 +30,8 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
 export default function MainPage({navigation}) {
   const [selectedId, setSelectedId] = useState(null);
 
+  //global.selectedArticle = selectedId;
+
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ? "darkblue" : "darkgreen";
       const color = item.id === selectedId ? 'white' : 'white';
@@ -37,7 +39,7 @@ export default function MainPage({navigation}) {
       return (
         <Item
           item={item}
-          onPress={() => navigation.navigate('SingleDisplay')}
+          onPress={() => {global.fakeArticle = item; navigation.navigate('SingleDisplay')}}
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
         />

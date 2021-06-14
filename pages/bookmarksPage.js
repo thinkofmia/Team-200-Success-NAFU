@@ -33,6 +33,7 @@ export default function Bookmarks({navigation}) {
           data={global.bookmarked}
           renderItem={renderItem}
           keyExtractor={item => item.id}
+          extraData={selectedId}
     />
   </View>
   );

@@ -19,6 +19,8 @@ global.bookmarked = [
     },
 ];
 
+global.selectedArticle = 0;
+
 global.fakeFeed = [
     {
       id : "0",
@@ -65,7 +67,7 @@ global.fakeFeed = [
       title : "Bears in Olympics",
       caption: 'Bears taking part in the olympics 2021 since the humans were all quarantined. What a day.', 
       image: 'https://biganimals.com/wp-content/uploads/polarBearsSwim.jpg',
-      title: 'Singapore is hosting 2021 olympics within the covid-19 era because they have gold medalist godilocks representing the frontline. Her fellow family of bears, Daddy bear, Mommy Bear, and Baby Bear are taking part in the olympics to gain a huge jar of honey. Would Winnie Pooh beat the Bear Family? See more below! ',
+      text: 'Singapore is hosting 2021 olympics within the covid-19 era because they have gold medalist godilocks representing the frontline. Her fellow family of bears, Daddy bear, Mommy Bear, and Baby Bear are taking part in the olympics to gain a huge jar of honey. Would Winnie Pooh beat the Bear Family? See more below! ',
       link : 'https://steamcommunity.com/id/Magfuse'
       },
   ];
