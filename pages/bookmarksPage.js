@@ -1,49 +1,67 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, Image, Linking, Button } from 'react-native';
+import { FlatList, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+const Item = ({ item, onPress }) => (
+  <TouchableOpacity style={styles.item} onPress={onPress}>
+    <Image
+          style={styles.thumbnails}
+          source={{
+            uri:
+                item.image
+          }}
+        />
+    <Text style={styles.title}>{item.title}</Text>
+  </TouchableOpacity>
+);
 
 export default function Bookmarks({navigation}) {
+
+  const renderItem = ({ item }) => {
+    return ( 
+      <Item
+        item={item}
+        onPress={() => navigation.navigate('SingleDisplay')}
+      />
+    );
+  };
+
   return (
     <View style={styles.container}>
-        <Text style={styles.eventsHeader}>This is the bookmarks page</Text>
-    </View>
-    );
+      <FlatList
+          data={global.bookmarked}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+    />
+  </View>
+  );
   }
 
-const styles=StyleSheet.create({
-  imgBackground:{
-    width: "90%",
-    height: "50%",
-    backgroundColor: "blue",
-  },
-  flexContainer: {
-      display: "flex",
-  },
-  eventsHeader: {
-    fontSize: 40,
-    fontWeight: "bold",
-    top: 0,
-  },
-  linkText: {
-      color: "blue",
-      fontWeight: "bold",
-  },
-  eventsText: {
-    padding: 10,
-    fontSize: 15,
-    marginTop: 20,
-  },
-  eventsImage: {
-    height: "100%",
-    width: "100%",
-    alignSelf: 'center',
-    marginTop: 10,
-    borderColor: 'white',
-    borderWidth: 2,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
+    const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      item: {
+        backgroundColor: 'darkblue',
+        width: "90%",
+        height: 360,
+        textAlign: 'center',
+        marginVertical: 8,
+        marginHorizontal: 16,
+      },
+      title: {
+        padding: 5,
+        fontSize: 15,
+        textAlign: 'center',
+        color: "white",
+      },
+      thumbnails: {
+        width: "100%",
+        height: "70%",
+      },
+    });
+    
