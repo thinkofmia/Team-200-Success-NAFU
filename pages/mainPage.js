@@ -16,6 +16,10 @@ export default function MainPage() {
     return (
       <View style={styles.container}>
         <Text>This is the main page!</Text>
+        <Button
+          title="Rave Charman party"
+          onPress={() => navigation.navigate('SingleDisplay')}
+        />
         <StatusBar style="auto" />
       </View>
     );
