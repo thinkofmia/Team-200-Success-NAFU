@@ -22,7 +22,7 @@ export default function SingleDisplay({navigation}) {
 
 const styles=StyleSheet.create({
   imgBackground:{
-    width: "70vw",
+    width: "70%",
     backgroundColor: "blue",
   },
   eventsText: {
