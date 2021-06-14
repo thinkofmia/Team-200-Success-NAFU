@@ -80,7 +80,12 @@ return (
       height: tileSize, 
       width: tileSize, 
       padding: 2,
-      alignContent: "center"
+      alignContent: "center",
+      borderRadius: 15,
+      shadowColor: "#000",
+      shadowOffset: {width: 15, height: 15},
+      shadowOpacity: 0.3,
+      shadowRadius: 5
     },
     title: {
       padding: 5,
@@ -90,6 +95,8 @@ return (
     thumbnails: {
       width: "100%",
       height: "70%",
+      borderTopLeftRadius: 15,
+      borderTopRightRadius: 15
     },
   });
   
