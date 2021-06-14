@@ -47,6 +47,7 @@ export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
     itemList.splice(itemIndex, 1);
   }
   // console.log('see global', itemList);
+  console.log("see bookmark list ids: ", getAllIDs(itemList));
   changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
 };
 
@@ -63,7 +64,6 @@ function getIndexOf(itemList, item){
 
 function checkItemExists(itemList, item){
   let idList = getAllIDs(itemList);
-  console.log("idlist", idList);
   if (idList.includes(item.id)){
     return true;
   }

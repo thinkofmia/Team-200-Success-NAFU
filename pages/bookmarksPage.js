@@ -16,6 +16,9 @@ const Item = ({ item, onPress }) => (
         />
     <View style={styles.textContent}>
       <Text style={styles.title}>{item.title}</Text>
+      <TouchableHighlight>
+        <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
+      </TouchableHighlight>
     </View>
   </TouchableOpacity>
 );
@@ -70,5 +73,9 @@ export default function Bookmarks({navigation}) {
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15
       },
+      textContent: {
+        display: 'flex',
+        flexDirection: 'row'
+      }
     });
     
