@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, Linking } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
@@ -17,9 +17,9 @@ export default function SingleDisplay({navigation}) {
             }}
           />
         </View>
-        <Text style={styles.eventsText}>Wanna get drunk and groove with polar bears on a Monday Blues in a Post Covid Era? Join us and DJ Magnus as we set up a chilly bar for you in 
-            <Text style={styles.linkText}> Magnus's Fusion Bar </Text> 
-        today. Register now!</Text>
+        <View style={styles.flexContainer}>
+            <Text style={styles.eventsText}>Wanna get drunk and groove with polar bears on a Monday Blues in a Post Covid Era? Join us and DJ Magnus as we set up a chilly bar for you in <Text style={styles.linkText} onPress={() => Linking.openURL('https://steamcommunity.com/id/Magfuse')}>Magnus's Fusion Bar </Text>today. Register now!</Text>
+        </View>
     </View>
     );
   }
@@ -29,6 +29,9 @@ const styles=StyleSheet.create({
     width: "90%",
     height: "50%",
     backgroundColor: "blue",
+  },
+  flexContainer: {
+      display: "flex",
   },
   eventsHeader: {
     fontSize: 40,
