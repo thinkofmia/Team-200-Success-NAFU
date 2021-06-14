@@ -15,19 +15,19 @@ const TEST_EVENT = {
 export default function SingleDisplay({navigation}) {
   return (
     <View style={styles.container}>
-        <Text style={styles.eventsHeader}>Polar Bear found drinking by West Coast Park</Text>
+        <Text style={styles.eventsHeader}>{TEST_EVENT.title}</Text>
         <View style={styles.imgBackground}>
           <Image
             style={styles.eventsImage}
             source={{
               uri:
-                'https://www.themebeta.com/media/cache/400x225/files/windows/images/201907/26/3872e0062b2df0aecdd5b6568f5e16d9.jpeg'
+                TEST_EVENT.image
             }}
           />
         </View>
         <View style={styles.flexContainer}>
-            <Text style={styles.eventsText}>Wanna get drunk and groove with polar bears on a Monday Blues in a Post Covid Era? Join us and DJ Magnus as we set up a chilly bar for you in <Text style={styles.linkText} onPress={() => Linking.openURL('https://steamcommunity.com/id/Magfuse')}>Magnus's Fusion Bar </Text>today. Register now!</Text>
-            <Button onPress={() => Linking.openURL('https://steamcommunity.com/id/Magfuse')} title="Link to Party"/>
+            <Text style={styles.eventsText}>{TEST_EVENT.text}</Text>
+            <Button onPress={() => Linking.openURL(TEST_EVENT.link)} title="Link to Party"/>
         </View>
     </View>
     );
