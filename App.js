@@ -5,7 +5,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SingleDisplayScreen from './pages/single-display';
+import SingleDisplay from './pages/single-display';
 import MainPage from "./pages/mainPage"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -20,6 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={MainPage}/>
+        <Stack.Screen name="SingleDisplay" component={SingleDisplay}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

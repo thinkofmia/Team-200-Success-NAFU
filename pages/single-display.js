@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, Image } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-function SingleDisplayScreen({ navigation }) {
+export default function SingleDisplay() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Image
