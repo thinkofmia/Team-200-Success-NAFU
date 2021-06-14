@@ -19,9 +19,9 @@ import { NavigationContainer } from '@react-navigation/native';
 const screenWidth = Dimensions.get("window").width;
 const numColumns = 14;
 const tileSize = 7*screenWidth/16;
-let fill = false;
+let article_bookmarked = false;
 
-const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill }) => (
+const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeState, bookmarkBoolean}) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Image
           style={styles.thumbnails}
@@ -32,29 +32,34 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill }) => (
         />
     <View style={styles.textContent}>
       <Text style={[styles.title, textColor]}>{item.title}</Text>
-      <TouchableHighlight onPress={changeBookmarkState(item)}>
-        <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']} />
+      <TouchableHighlight onPress={() => pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}>
+        <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
       </TouchableHighlight>
     </View>
   </TouchableOpacity>
 );
 
-function changeBookmarkState(item){
-  fill = !fill;
-  if (fill){
+export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
+  article_bookmarked = global.bookmarkedArticle.includes(item, true)
+  console.log("check bookmarked?", article_bookmarked);
+  if (!article_bookmarked){
     global.bookmarkedArticle.push(item);
+  } else {
+    global.bookmarkedArticle.pop(item);
   }
+  changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
 };
 
 export default function MainPage({navigation}) {
   const [selectedId, setSelectedId] = useState(null);
+  const [setBookmark, setSelectedBookmark] = useState(false);
 
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#21a0a0";
       const color = item.id === selectedId ? 'black' : 'black';
-      const bmFill = fill ? 'ios-bookmarks' : 'ios-bookmarks-outline';
+      const bmFill = setBookmark ? 'ios-bookmarks' : 'ios-bookmarks-outline';
   
       return (
         <Item
@@ -63,6 +68,8 @@ export default function MainPage({navigation}) {
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
           bookmarkFill={{ bmFill }}
+          changeState={{ setSelectedBookmark }}
+          bookmarkBoolean={{ setBookmark }}
         />
       );
     };
@@ -75,6 +82,7 @@ return (
           keyExtractor={item => item.id}
           extraData={selectedId}
           numColumns={2}
+          changeState={setSelectedBookmark}
     />
   </View>
   );
