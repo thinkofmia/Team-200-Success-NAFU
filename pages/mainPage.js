@@ -8,17 +8,20 @@ import {
   Button,
   TouchableOpacity,
   Dimensions,
-  Image
+  Image,
+  TouchableHighlight
 
 } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 const screenWidth = Dimensions.get("window").width;
 const numColumns = 14;
 const tileSize = 7*screenWidth/16;
+let fill = false;
 
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
+const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Image
           style={styles.thumbnails}
@@ -27,9 +30,21 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
                 item.image
           }}
         />
-    <Text style={[styles.title, textColor]}>{item.title}</Text>
+    <View style={styles.textContent}>
+      <Text style={[styles.title, textColor]}>{item.title}</Text>
+      <TouchableHighlight onPress={changeBookmarkState(item)}>
+        <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']} />
+      </TouchableHighlight>
+    </View>
   </TouchableOpacity>
 );
+
+function changeBookmarkState(item){
+  fill = !fill;
+  if (fill){
+    global.bookmarkedArticle.push(item);
+  }
+};
 
 export default function MainPage({navigation}) {
   const [selectedId, setSelectedId] = useState(null);
@@ -39,6 +54,7 @@ export default function MainPage({navigation}) {
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#21a0a0";
       const color = item.id === selectedId ? 'black' : 'black';
+      const bmFill = fill ? 'ios-bookmarks' : 'ios-bookmarks-outline';
   
       return (
         <Item
@@ -46,6 +62,7 @@ export default function MainPage({navigation}) {
           onPress={() => {global.fakeArticle = item; navigation.navigate('SingleDisplay')}}
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
+          bookmarkFill={{ bmFill }}
         />
       );
     };
@@ -98,5 +115,9 @@ return (
       borderTopLeftRadius: 15,
       borderTopRightRadius: 15
     },
+    textContent: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
   });
   
