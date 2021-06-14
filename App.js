@@ -6,7 +6,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import SingleDisplay from './pages/single-display';
-import MainPage from "./pages/mainPage"
+import MainPage from "./pages/mainPage";
+import Preferences from "./pages/preferences";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
@@ -17,6 +18,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home"> 
         <Stack.Screen name="Home" component={MainPage}/>
         <Stack.Screen name="SingleDisplay" component={SingleDisplay}/>
+        <Stack.Screen name="Preferences" component={Preferences}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

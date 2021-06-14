@@ -17,8 +17,12 @@ export default function MainPage({navigation}) {
       <View style={styles.container}>
         <Text>This is the main page!</Text>
         <Button
-          title="Rave Charman party"
+          title="Drinking Polar Bear (Event)"
           onPress={() => navigation.navigate('SingleDisplay')}
+        />
+        <Button
+          title="Select Your Preferences"
+          onPress={() => navigation.navigate('Preferences')}
         />
         <StatusBar style="auto" />
       </View>
