@@ -21,7 +21,7 @@ const BottomTabNavigator = () => {
             iconName = focused ? 'ios-home' : 'ios-home-outline';
           }
           else if (route.name === 'Bookmarks') {
-            iconName = focused ? 'ios-bookmark' : 'ios-bookmark-outline';
+            iconName = focused ? 'ios-bookmarks' : 'ios-bookmarks-outline';
           }
 
           // You can return any component that you like here!

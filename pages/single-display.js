@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, Image, Linking, Button } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import * as WebBrowser from 'expo-web-browser';
+import { Animated, View, StyleSheet, Text, Image, Linking, Button } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function SingleDisplay({navigation}) {
   return (
@@ -12,11 +10,11 @@ export default function SingleDisplay({navigation}) {
           <Image
             style={styles.eventsImage}
             source={{
-              uri:
-              global.fakeArticle.image
+              uri: global.fakeArticle.image
             }}
           />
         </View>
+        <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
         <View style={styles.flexContainer}>
             <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
             <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
@@ -26,6 +24,11 @@ export default function SingleDisplay({navigation}) {
   }
 
 const styles=StyleSheet.create({
+  bookmarks: {
+    width: 50,
+    height: 50,
+    marginTop: 20,
+  },
   imgBackground:{
     width: "90%",
     height: "50%",
