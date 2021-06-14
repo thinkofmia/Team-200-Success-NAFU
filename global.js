@@ -22,6 +22,7 @@ global.bookmarked = [
 global.userPreferences = [];
 
 global.selectedArticle = 0;
+global.bookmarkedArticle = [];
 
 global.fakeFeed = [
     {
