@@ -70,6 +70,14 @@ global.fakeFeed = [
       text: 'Singapore is hosting 2021 olympics within the covid-19 era because they have gold medalist godilocks representing the frontline. Her fellow family of bears, Daddy bear, Mommy Bear, and Baby Bear are taking part in the olympics to gain a huge jar of honey. Would Winnie Pooh beat the Bear Family? See more below! ',
       link : 'https://steamcommunity.com/id/Magfuse'
       },
+      {
+        id: '6',
+        title : "Bears?",
+        caption: 'Are these bears?.', 
+        image: 'https://api.time.com/wp-content/uploads/2014/03/red-pandas-cincinnati-zoo-3.jpg',
+        text: 'For centuries, the issue of whether these cute creatures are bears has been an intense debate between the "bear bears" and the "not bear bears" groups. A recent and perhaps groundbreaking study by the University of Bearology is about to once and for all prove who is right. Or will it? ',
+        link : 'https://steamcommunity.com/id/Magfuse'
+        },
   ];
 
 global.fakeArticle = {
