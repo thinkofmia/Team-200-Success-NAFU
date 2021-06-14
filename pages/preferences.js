@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, Image, Linking, FlatList } from 'react-native';
+import { View, StyleSheet, Text, Image, Linking, FlatList, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -23,16 +23,28 @@ const PREFERENCES_TOPIC = [
     },
   ];
 
-  const Item = ({ title }) => (
-    <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
-    </View>
+  const Item = ({ item, onPress, backgroundColor, textColor }) => (
+    <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+      <Text style={[styles.title, textColor]}>{item.title}</Text>
+    </TouchableOpacity>
   );
 
 export default function Preferences({navigation}) {
-    const renderItem = ({ item }) => (
-        <Item title={item.title} />
-      );
+    const [selectedId, setSelectedId] = useState(null);
+
+    const renderItem = ({ item }) => {
+        const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
+        const color = item.id === selectedId ? 'white' : 'black';
+    
+        return (
+          <Item
+            item={item}
+            onPress={() => setSelectedId(item.id)}
+            backgroundColor={{ backgroundColor }}
+            textColor={{ color }}
+          />
+        );
+      };
 
   return (
     <View style={styles.container}>
@@ -41,6 +53,7 @@ export default function Preferences({navigation}) {
             data={PREFERENCES_TOPIC}
             renderItem={renderItem}
             keyExtractor={item => item.id}
+            extraData={selectedId}
       />
     </View>
     );
