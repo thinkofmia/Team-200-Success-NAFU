@@ -57,10 +57,9 @@ export default function Preferences({navigation}) {
             onPress={() => {
               var index = global.userPreferences.indexOf(item.title);
               if (index > -1) {global.userPreferences.splice(index, 1);
-                console.log(global.userPreferences);
             }
               else global.userPreferences.push(item.title);
-
+              console.log(global.userPreferences);
               navigation.navigate('Preferences');
           }
           
