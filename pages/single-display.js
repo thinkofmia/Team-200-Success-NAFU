@@ -16,6 +16,7 @@ export default function SingleDisplay({navigation}) {
         </View>
         <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
         <View style={styles.flexContainer}>
+            <Text style={styles.eventsText}>{global.fakeArticle.date}</Text>
             <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
             <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
         </View>

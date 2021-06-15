@@ -8,17 +8,16 @@ import {
   Button,
   TouchableOpacity,
   Dimensions,
-  Image
+  Image,
+  TouchableHighlight
 
 } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const screenWidth = Dimensions.get("window").width;
-const numColumns = 14;
 const tileSize = 7*screenWidth/16;
 
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
+const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeState, bookmarkBoolean}) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Image
           style={styles.thumbnails}
@@ -27,18 +26,61 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
                 item.image
           }}
         />
-    <Text style={[styles.title, textColor]}>{item.title}</Text>
+    <View style={styles.textContent}>
+      <TouchableHighlight onPress={() => pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}>
+        <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
+      </TouchableHighlight>
+      <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
+        {item.title} </Text>
+    </View>
   </TouchableOpacity>
 );
 
+export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
+  let itemList = global.bookmarkedArticle;
+  // console.log("itemid", item.id);
+  let itemExists = checkItemExists(itemList, item)
+  // console.log("item exsits?", itemExists);
+  if (!itemExists){
+    itemList.push(item);
+  } else {
+    let itemIndex = getIndexOf(itemList, item);
+    itemList.splice(itemIndex, 1);
+  }
+  // console.log('see global', itemList);
+  console.log("see bookmark list ids: ", getAllIDs(itemList));
+  changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
+};
+
+function getAllIDs(itemList){
+  let idList = itemList.map((item) => {
+    return item.id;
+  });
+  return idList;
+}
+
+function getIndexOf(itemList, item){
+  return itemList.indexOf(item, 0);
+}
+
+function checkItemExists(itemList, item){
+  let idList = getAllIDs(itemList);
+  if (idList.includes(item.id)){
+    return true;
+  }
+  return false;
+}
+
 export default function MainPage({navigation}) {
   const [selectedId, setSelectedId] = useState(null);
+  const [setBookmark, setSelectedBookmark] = useState(false);
 
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#21a0a0";
       const color = item.id === selectedId ? 'black' : 'black';
+      const bmFill = setBookmark ? 'ios-bookmarks' : 'ios-bookmarks-outline';
   
       return (
         <Item
@@ -46,6 +88,9 @@ export default function MainPage({navigation}) {
           onPress={() => {global.fakeArticle = item; navigation.navigate('SingleDisplay')}}
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
+          bookmarkFill={{ bmFill }}
+          changeState={{ setSelectedBookmark }}
+          bookmarkBoolean={{ setBookmark }}
         />
       );
     };
@@ -58,6 +103,7 @@ return (
           keyExtractor={item => item.id}
           extraData={selectedId}
           numColumns={2}
+          changeState={setSelectedBookmark}
     />
   </View>
   );
@@ -66,7 +112,7 @@ return (
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#fcfff7',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -80,16 +126,28 @@ return (
       height: tileSize, 
       width: tileSize, 
       padding: 2,
-      alignContent: "center"
+      alignContent: "center",
+      borderRadius: 15,
+      shadowColor: "#000",
+      shadowOffset: {width: 15, height: 15},
+      shadowOpacity: 0.3,
+      shadowRadius: 5
     },
     title: {
-      padding: 5,
-      flex: 1,
+      padding: 2,
+      flex: 0.9,
       textAlign: 'center',
+      fontSize: 13
     },
     thumbnails: {
       width: "100%",
       height: "70%",
+      borderTopLeftRadius: 15,
+      borderTopRightRadius: 15
     },
+    textContent: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
   });
   
