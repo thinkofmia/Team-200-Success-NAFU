@@ -1,3 +1,45 @@
+import * as firebase from 'firebase';
+import 'firebase/firestore';
+//import { useState } from 'react/cjs/react.production.min';
+import React, { useState, useEffect } from 'react';
+
+const configuration = {
+    apiKey: "AIzaSyD-osswqARxtLg0p2_5tOwfYdjql_lh-EM",
+    authDomain: "codeexp2021-d9c74.firebaseapp.com",
+    projectId: "codeexp2021-d9c74",
+    storageBucket: "codeexp2021-d9c74.appspot.com",
+    messagingSenderId: "998917826690",
+    appId: "1:998917826690:web:cee9bf4b25b54b9e5f2c9b",
+    measurementId: "G-RTM7FKQVKC"
+}
+if (!firebase.apps.length) {
+  firebase.initializeApp(configuration);
+}
+
+const db = firebase.firestore();
+export default db;
+
+const grabData = () => {
+  
+  const [ data, setData ] = useState([])
+  
+  useEffect( () => {
+    db.collection('data')
+    .get()
+    .then(result => result.docs)
+    .then(docs => docs.map(doc => ({
+      id: doc.id,
+      image: doc.image,
+      text: doc.text,
+    })))
+    .then(data => setData(data))
+  }, [])
+
+}
+
+const a = 3
+global.b = '1'
+
 global.bookmarked = [
     {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -33,6 +75,7 @@ global.fakeFeed = [
       title : "Polar Bear found drinking by West Coast Park",
       caption: 'Polar Bear found drinking by West Coast Park, having Magfuse juices.',
       image: 'https://www.themebeta.com/media/cache/400x225/files/windows/images/201907/26/3872e0062b2df0aecdd5b6568f5e16d9.jpeg',
+      //text : "Wanna get drunk and groove with polar bears on a Monday Blues in a Post Covid Era?",
       text : "Wanna get drunk and groove with polar bears on a Monday Blues in a Post Covid Era? Join us and DJ Magnus as we set up a chilly bar for you in Magnus's Fusion Bar today. Register now!",
       link : 'https://steamcommunity.com/id/Magfuse'
     },
