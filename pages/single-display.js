@@ -30,12 +30,12 @@ const styles=StyleSheet.create({
   bookmarks: {
     width: 50,
     height: 50,
-    marginTop: 20,
+    marginTop: 0,
   },
   imgBackground:{
     width: "100%",
     height: "50%",
-    backgroundColor: "white",
+    backgroundColor: "blue",
   },
   flexContainer: {
       display: "flex",
@@ -43,7 +43,7 @@ const styles=StyleSheet.create({
   eventsHeader: {
     fontSize: 30,
     fontWeight: "bold",
-    marginTop: 150,
+    marginTop: 50,
     textAlign: 'center',
   },
   linkText: {
@@ -51,17 +51,17 @@ const styles=StyleSheet.create({
       fontWeight: "bold",
   },
   eventsText: {
-    padding: 10,
+    paddingBottom: 10,
+    paddingLeft: 5,
     fontSize: 15,
-    marginTop: 20,
+    marginTop: 0,
   },
   eventsImage: {
     height: "100%",
     width: "100%",
     alignSelf: 'center',
-    marginTop: 100,
     borderColor: 'white',
-    borderWidth: 2,
+    borderWidth: 5,
   },
   container: {
     flex: 1,
