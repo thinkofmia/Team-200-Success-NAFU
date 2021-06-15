@@ -13,6 +13,9 @@ import {
 
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import ComboBox from '../filter/comboBox';
+
+import { filterData } from '../scripts/filter';'./scripts/filter'
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
@@ -74,14 +77,21 @@ function checkItemExists(itemList, item){
 export default function MainPage({navigation}) {
   const [selectedId, setSelectedId] = useState(null);
   const [setBookmark, setSelectedBookmark] = useState(false);
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
 
+  
+  setTimeout(
+    () => forceUpdate(),
+    100
+  )
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#21a0a0";
       const color = item.id === selectedId ? 'black' : 'black';
       const bmFill = setBookmark ? 'ios-bookmarks' : 'ios-bookmarks-outline';
-  
+      
       return (
         <Item
           item={item}
@@ -97,8 +107,9 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <ComboBox />
       <FlatList
-          data={global.fakeFeed}
+          data={filterData(global.fakeFeed, "none", global.userPreferences)} 
           renderItem={renderItem}
           keyExtractor={item => item.id}
           extraData={selectedId}
@@ -148,6 +159,6 @@ return (
     textContent: {
       display: 'flex',
       flexDirection: 'row'
-    }
+    },
   });
   
