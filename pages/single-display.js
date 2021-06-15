@@ -5,6 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 export default function SingleDisplay({navigation}) {
   return (
       <View style={styles.container}>
+
         <View style={styles.imgBackground}>
             <Image
               style={styles.eventsImage}
@@ -13,6 +14,7 @@ export default function SingleDisplay({navigation}) {
               }}
             />
           </View>
+          
         <ScrollView style={styles.scrollView}>
           <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
           <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
