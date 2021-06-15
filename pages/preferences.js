@@ -46,6 +46,7 @@ const PREFERENCES_TOPIC = [
 
 export default function Preferences({navigation}) {
     const [selectedId, setSelectedId] = useState(null);
+    const [refreshPage, setRefreshPage] = useState("");
 
     const renderItem = ({ item }) => {
         const backgroundColor = global.userPreferences.includes(item.title) ? "#6e3b6e" : "#f9c2ff";
@@ -58,9 +59,9 @@ export default function Preferences({navigation}) {
               var index = global.userPreferences.indexOf(item.title);
               if (index > -1) {global.userPreferences.splice(index, 1);
             }
-              else global.userPreferences.push(item.title);
+              else {global.userPreferences.push(item.title);}
               console.log(global.userPreferences);
-              navigation.navigate('Preferences');
+              setRefreshPage("refresh");
           }
           
         }
