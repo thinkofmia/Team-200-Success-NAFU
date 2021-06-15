@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { Animated, View, StyleSheet, Text, Image, Linking, Button } from 'react-native';
+import { Animated, View, StyleSheet, Text, Image, Linking, Button, ScrollView, FlatList } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function SingleDisplay({navigation}) {
   return (
-    <View style={styles.container}>
-        <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
-        <View style={styles.imgBackground}>
-          <Image
-            style={styles.eventsImage}
-            source={{
-              uri: global.fakeArticle.image
-            }}
-          />
-        </View>
-        <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
-        <View style={styles.flexContainer}>
-            <Text style={styles.eventsText}>{global.fakeArticle.date}</Text>
-            <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
-            <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
-        </View>
-    </View>
+
+      <View style={styles.container}>
+          <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
+          <View style={styles.imgBackground}>
+            <Image
+              style={styles.eventsImage}
+              source={{
+                uri: global.fakeArticle.image
+              }}
+            />
+          </View>
+          <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
+          <View style={styles.flexContainer}>
+              <Text style={styles.eventsText}>{global.fakeArticle.date}</Text>
+              <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
+              <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
+          </View>
+      </View>
+
     );
   }
 
@@ -28,10 +30,10 @@ const styles=StyleSheet.create({
   bookmarks: {
     width: 50,
     height: 50,
-    marginTop: 20,
+    marginTop: 0,
   },
   imgBackground:{
-    width: "90%",
+    width: "100%",
     height: "50%",
     backgroundColor: "blue",
   },
@@ -39,26 +41,27 @@ const styles=StyleSheet.create({
       display: "flex",
   },
   eventsHeader: {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: "bold",
-    top: 0,
+    marginTop: 50,
+    textAlign: 'center',
   },
   linkText: {
       color: "blue",
       fontWeight: "bold",
   },
   eventsText: {
-    padding: 10,
+    paddingBottom: 10,
+    paddingLeft: 5,
     fontSize: 15,
-    marginTop: 20,
+    marginTop: 0,
   },
   eventsImage: {
     height: "100%",
     width: "100%",
     alignSelf: 'center',
-    marginTop: 10,
     borderColor: 'white',
-    borderWidth: 2,
+    borderWidth: 5,
   },
   container: {
     flex: 1,
