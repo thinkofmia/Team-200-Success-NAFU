@@ -10,7 +10,7 @@ export function filterData(listArray, filterOptions, categories){
     }
 
     filteredArr = tempArr;
-    console.log("Filtered Array: ")
-    console.log(filteredArr);
+    //console.log("Filtered Array: ")
+    //console.log(filteredArr);
     return filteredArr;
 }
