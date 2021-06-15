@@ -47,6 +47,8 @@ const PREFERENCES_TOPIC = [
 export default function Preferences({navigation}) {
     const [selectedId, setSelectedId] = useState(null);
     const [refreshPage, setRefreshPage] = useState("");
+    const [, updateState] = React.useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
 
     const renderItem = ({ item }) => {
         const backgroundColor = global.userPreferences.includes(item.title) ? "#6e3b6e" : "#f9c2ff";
@@ -62,6 +64,7 @@ export default function Preferences({navigation}) {
               else {global.userPreferences.push(item.title);}
               console.log(global.userPreferences);
               setRefreshPage("refresh");
+              forceUpdate();
           }
           
         }
