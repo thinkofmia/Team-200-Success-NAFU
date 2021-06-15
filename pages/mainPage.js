@@ -27,10 +27,11 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
           }}
         />
     <View style={styles.textContent}>
-      <Text style={[styles.title, textColor]}>{item.title}</Text>
       <TouchableHighlight onPress={() => pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}>
         <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
       </TouchableHighlight>
+      <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
+        {item.title} </Text>
     </View>
   </TouchableOpacity>
 );
@@ -133,9 +134,10 @@ return (
       shadowRadius: 5
     },
     title: {
-      padding: 5,
-      flex: 1,
+      padding: 2,
+      flex: 0.9,
       textAlign: 'center',
+      fontSize: 13
     },
     thumbnails: {
       width: "100%",

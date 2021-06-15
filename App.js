@@ -14,7 +14,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import './global';
-// other code
+// other code 
 
 
 export default function App() {
