@@ -4,8 +4,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function SingleDisplay({navigation}) {
   return (
-
       <View style={styles.container}>
+
           <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
           <View style={styles.imgBackground}>
             <Image
@@ -16,11 +16,13 @@ export default function SingleDisplay({navigation}) {
             />
           </View>
           <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
+          <ScrollView>
           <View style={styles.flexContainer}>
               <Text style={styles.eventsText}>{global.fakeArticle.date}</Text>
               <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
               <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
           </View>
+          </ScrollView>
       </View>
 
     );
