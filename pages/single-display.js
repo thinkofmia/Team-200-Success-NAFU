@@ -27,8 +27,12 @@ const HomeScreen = () => {
           </View>
           <View style={styles.flexContainer}>
               <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
-              <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
-              <Text style={styles.eventsText}>{global.fakeArticle.date}</Text>
+              
+              <Text style={{ flexDirection: 'row', justifyContent: 'space-between', marginLeft: 17, textAlign:'center'}}>
+                <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks'/>
+                <Text style={styles.subHeader}>Price: ${global.fakeArticle.price}</Text>
+              </Text>
+              <Text style={styles.subHeader}> Date: {global.fakeArticle.date} | Category: {global.fakeArticle.category}</Text>
               <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
               <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
           </View>
@@ -96,8 +100,13 @@ const styles=StyleSheet.create({
   bookmarks: {
     width: 50,
     height: 50,
-    marginTop: 0,
-    textAlign: "center",
+    marginBottom: 0,
+    marginLeft: 100,
+  },
+  bookmarkText: {
+    marginBottom: 5,
+    marginLeft: 15,
+    fontSize: 16,
   },
   /*
   imgBackground:{
@@ -123,9 +132,20 @@ const styles=StyleSheet.create({
   },*/
   eventsText: {
     paddingBottom: 10,
-    paddingLeft: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
     fontSize: 15,
     marginTop: 0,
+    textAlign: 'justify',
+  },
+  subHeader : {
+    paddingBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontSize: 15,
+    marginTop: 0,
+    textAlign: 'center',
+    fontWeight: "bold",
   },
   /*
   eventsImage: {
