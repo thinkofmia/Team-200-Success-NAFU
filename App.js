@@ -13,7 +13,9 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+//Import external scripts
 import './global';
+import './scripts/filter'
 // other code
 
 
