@@ -13,8 +13,10 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+//Import external scripts
 import './global';
-// other code 
+import './scripts/filter'
+// other code
 
 
 export default function App() {
