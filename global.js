@@ -120,7 +120,7 @@ global.fakeFeed = [
         title : "Scaring in Cinema",
         caption: 'Bear hijacks cinemas with popcorn. Scares of 0 moviegoers due to covid-19.',
         image: 'https://cdn3.vectorstock.com/i/1000x1000/93/22/cute-polar-bear-with-popconr-childish-character-vector-25099322.jpg',
-        text: "Polar bears have hijacked Shaw Theatres, due to the student discount of $8 per movie. However, polar bears were then addicted salted popcorns due to their similar taste with salted fish. To also get student discounts and chill with the polar bears, join the link below!",
+        text: "Polar bears have hijacked Shaw Theatres, due to the student discount of $8 per movie. However, polar bears were then addicted salted popcorns due to their similar taste with salted fish. To also get student discounts and chill with the polar bears, join the link below! Polar bears have hijacked Shaw Theatres, due to the student discount of $8 per movie. However, polar bears were then addicted salted popcorns due to their similar taste with salted fish. To also get student discounts and chill with the polar bears, join the link below!",
         link : 'https://steamcommunity.com/id/Magfuse'
       },
       {
