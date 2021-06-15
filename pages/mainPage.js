@@ -98,6 +98,7 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <ComboBox />
       <FlatList
           data={global.fakeFeed}
           renderItem={renderItem}
