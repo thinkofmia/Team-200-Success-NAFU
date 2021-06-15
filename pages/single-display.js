@@ -15,8 +15,6 @@ export default function SingleDisplay({navigation}) {
           </View>
         <ScrollView style={styles.scrollView}>
           <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
-
-      
           <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
         
           <View style={styles.flexContainer}>
