@@ -13,6 +13,7 @@ import {
 
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import ComboBox from '../filter/comboBox';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
@@ -148,6 +149,6 @@ return (
     textContent: {
       display: 'flex',
       flexDirection: 'row'
-    }
+    },
   });
   
