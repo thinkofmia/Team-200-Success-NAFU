@@ -13,6 +13,7 @@ import {
 
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import ComboBox from '../filter/comboBox';
 
 import { filterData } from '../scripts/filter';'./scripts/filter'
 
@@ -106,6 +107,7 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <ComboBox />
       <FlatList
           data={filterData(global.fakeFeed, "none", global.userPreferences)} 
           renderItem={renderItem}
@@ -157,6 +159,6 @@ return (
     textContent: {
       display: 'flex',
       flexDirection: 'row'
-    }
+    },
   });
   
