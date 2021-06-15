@@ -108,6 +108,17 @@ global.fakeFeed = [
       text: 'For centuries, the issue of whether these cute creatures are bears has been an intense debate between the "bear bears" and the "not bear bears" groups. A recent and perhaps groundbreaking study by the University of Bearology is about to once and for all prove who is right. Or will it? ',
       link : 'https://steamcommunity.com/id/Magfuse'
       },
+      {
+        id: '7',
+        category: "Pets",
+        date: "1/1/2045",
+        price: 109,
+        title : "New Programming Language Discovered",
+        caption: 'MaoScript? Hmmm...', 
+        image: 'https://scx2.b-cdn.net/gfx/news/hires/2020/careforcatss.jpg',
+        text: 'A new programming language has been discovered! Researchers have look at the genetics of cats and surprisingly they realised that cats have the ability to code, just like mankind. They have the capability to adapt, improvise and overcome those challenges infused with complex logical thinking. Introducing the new programming language MaoScript, a new programming language cater to communicate with cats. This programming language have the capability to use Cats Intelligence framework to learn a deep neural cats network all thanks to the PyKatze package. Available at the price of $109. Don\'t wait, get yours today!',
+        link : 'https://steamcommunity.com/id/Magfuse'
+        },
 ];
 
 global.fakeArticle = {
