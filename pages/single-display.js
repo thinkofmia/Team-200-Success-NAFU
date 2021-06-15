@@ -4,10 +4,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function SingleDisplay({navigation}) {
   return (
-
       <View style={styles.container}>
-          <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
-          <View style={styles.imgBackground}>
+        <View style={styles.imgBackground}>
             <Image
               style={styles.eventsImage}
               source={{
@@ -15,14 +13,19 @@ export default function SingleDisplay({navigation}) {
               }}
             />
           </View>
+        <ScrollView style={styles.scrollView}>
+          <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
+
+      
           <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks' />
+        
           <View style={styles.flexContainer}>
               <Text style={styles.eventsText}>{global.fakeArticle.date}</Text>
               <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
               <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
           </View>
+        </ScrollView>
       </View>
-
     );
   }
 
@@ -31,6 +34,8 @@ const styles=StyleSheet.create({
     width: 50,
     height: 50,
     marginTop: 0,
+    textAlign: "center",
+    
   },
   imgBackground:{
     width: "100%",
@@ -41,6 +46,7 @@ const styles=StyleSheet.create({
       display: "flex",
   },
   eventsHeader: {
+    position: 'relative',
     fontSize: 30,
     fontWeight: "bold",
     marginTop: 50,
@@ -69,4 +75,5 @@ const styles=StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
 })
