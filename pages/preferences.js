@@ -33,13 +33,6 @@ const PREFERENCES_TOPIC = [
 
   const Item = ({ item, onPress, backgroundColor, textColor }) => (
     <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-      <Image
-            style={styles.thumbnails}
-            source={{
-              uri:
-                  item.image
-            }}
-          />
       <Text style={[styles.title, textColor]}>{item.title}</Text>
     </TouchableOpacity>
   );
@@ -78,11 +71,11 @@ export default function Preferences({navigation}) {
     <View style={styles.container}>
         <Text style={styles.eventsHeader}>Select your preferences</Text>
         <FlatList
+            style = {styles.list}
             data={PREFERENCES_TOPIC}
             renderItem={renderItem}
             keyExtractor={item => item.id}
             extraData={selectedId}
-            numColumns={2}
       />
     </View>
     );
@@ -94,14 +87,18 @@ const styles=StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    width: "100%",
+  },
+  list: {
+    width: "90%",
   },
   item: {
     backgroundColor: '#f9c2ff',
-    width: "40%",
-    height: 200,
+    width: "90%",
     textAlign: 'center',
     marginVertical: 8,
     marginHorizontal: 16,
+    borderRadius: 20,
   },
   title: {
     fontSize: 32,
