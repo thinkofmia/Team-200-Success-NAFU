@@ -40,7 +40,6 @@ const grabData = () => {
 const a = 3
 global.b = '1'
 
-
 global.bookmarked = [
     {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
