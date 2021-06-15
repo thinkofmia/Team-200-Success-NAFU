@@ -29,8 +29,8 @@ const MainStackNavigator = () => {
   const SettingsStackNavigator = () => {
     return (
       <Stack.Navigator>
-        <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Preferences" component={Preferences}/>
+        <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
     );
   }
