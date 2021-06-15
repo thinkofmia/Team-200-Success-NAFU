@@ -146,7 +146,67 @@ global.fakeFeed = [
         image: 'https://api.time.com/wp-content/uploads/2014/03/red-pandas-cincinnati-zoo-3.jpg',
         text: 'For centuries, the issue of whether these cute creatures are bears has been an intense debate between the "bear bears" and the "not bear bears" groups. A recent and perhaps groundbreaking study by the University of Bearology is about to once and for all prove who is right. Or will it? ',
         link : 'https://steamcommunity.com/id/Magfuse'
-        },
+      },
+      {
+        id: '7',
+        category: "Travel",
+        date: "12/8/2020",
+        price: 200,
+        title : "Boxplane invented in 2020",
+        image: 'https://cdn5.vectorstock.com/i/1000x1000/95/79/teddy-bear-made-plane-vector-3069579.jpg',
+        text: 'Introducing boxplane. The world leading environmentally friendly plane made of cardboard and paper. Endorsed by Park Ranger Patricia, this cardboard plane is said to be able to travel for at most 1km! Limited seat available! ',
+        link : 'https://steamcommunity.com/id/Magfuse'
+      },
+      {
+        id: '8',
+        category: "Romance",
+        date: "22/10/2011",
+        price: 10,
+        title : "Of Fire and Ice",
+        image: 'https://i.dailymail.co.uk/i/pix/2014/07/14/article-0-1FA10FF600000578-698_634x397.jpg',
+        text: 'Ever heard of two opposites coming together to mate? Meet Mr Blue and Mrs Brown. Two lizards of two distinct breed, coming to the walls of hive for their once in a blue moon mating season. Join them, as you get a preview of their honeymoon 24/7. ',
+        link : 'https://steamcommunity.com/id/Magfuse'
+      },
+      {
+        id: '9',
+        category: "Food",
+        date: "13/8/2009",
+        price: 50,
+        title : "Cattegetti",
+        image: 'https://i.ytimg.com/vi/tOg9wzhQWLU/maxresdefault.jpg',
+        text: 'Watch as Munchkin, cat of Jurong East munch on what it seems to be a spagetthi. Freshly served from the ovens of some wild peanuts, Munchkins owner can only be frightened of whats next. Join the food session below. ',
+        link : 'https://steamcommunity.com/id/Magfuse'
+      },
+      {
+        id: '10',
+        category: "Family",
+        date: "3/1/2019",
+        price: 1000,
+        title : "White 'Sheep' of the Breed",
+        image: 'https://barkpost.com/wp-content/uploads/2015/06/dog-family-reunion-2.jpg',
+        text: 'Amongthe family of four, one particular dog grows with a different fur from her siblings. Meet Amily. The cutest and upcoming shepherd leading Mianna Ranch at the stunning age of 4! Visit the ranch today in the link below. ',
+        link : 'https://steamcommunity.com/id/Magfuse'
+      },
+      {
+        id: '11',
+        category: "Movies",
+        date: "18/12/2008",
+        price: 12,
+        title : "Ratatouille 2",
+        image: 'https://www.wired.com/images_blogs/underwire/images/2007/04/30/043007ratatouilee.jpg',
+        text: 'Ratatouille is back, with more cooking action, dishes, wild pulling of hairs and chef manipulation! Get the tickets today!',
+        link : 'https://steamcommunity.com/id/Magfuse'
+      },
+      {
+        id: '12',
+        category: "Travel",
+        date: "8/1/2021",
+        price: 900,
+        title : "Journey of the Hermit Seal",
+        image: 'https://stickershop.line-scdn.net/stickershop/v1/product/7359238/LINEStorePC/main.png;compress=true',
+        text: 'Written by your one and only Mianna, the story covers a seal named Lilzzy as she travels around the artic ocean looking for a place called home. To purchase the pre-order of the book, click on the link below.',
+        link : 'https://steamcommunity.com/id/Magfuse'
+      },
   ];
 
 global.fakeArticle = {
