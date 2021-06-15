@@ -15,7 +15,7 @@ const BottomTabNavigator = () => {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'Settings') {
+          if (route.name === 'Preferences') {
             iconName = focused ? 'ios-settings' : 'ios-settings-outline';
           } 
           else if (route.name === 'Home') {
@@ -35,7 +35,7 @@ const BottomTabNavigator = () => {
       }}>
       <Tab.Screen name="Home" component={MainStackNavigator} />
       <Tab.Screen name="Bookmarks" component={BookmarksStackNavigator} />
-      <Tab.Screen name="Settings" component={SettingsStackNavigator} />
+      <Tab.Screen name="Preferences" component={SettingsStackNavigator} />
     </Tab.Navigator>
   );
 };
