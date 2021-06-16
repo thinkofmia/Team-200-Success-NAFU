@@ -25,7 +25,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator headerMode='none'>
           <Stack.Screen name="Splash" component={Splash} />
-          <Stack.Screen headerMode='none' name="BottomTabNavigator" component={BottomTabNavigator} />
+          <Stack.Screen 
+            headerMode='none' 
+            name="BottomTabNavigator" 
+            component={BottomTabNavigator} 
+            style={styles.stackPages}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -37,5 +41,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  stackPages: {
+    paddingTop: 220,
   },
 });

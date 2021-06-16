@@ -15,7 +15,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ComboBox from '../filter/comboBox';
 
-import { filterData } from '../scripts/filter';
+import { checkBookmarked } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
@@ -31,7 +31,7 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
         />
     <View style={styles.textContent}>
       <TouchableHighlight onPress={() => {
-        pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}
+        pushPopBookmarkedArticle(item, bookmarkBoolean)}
     }>
         <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
       </TouchableHighlight>
@@ -41,7 +41,7 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
   </TouchableOpacity>
 );
 
-export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
+export function pushPopBookmarkedArticle(item, bookmarkBoolean){
   let itemList = global.bookmarkedArticles;
   // console.log("itemid", item.id);
   let itemExists = checkItemExists(itemList, item)
@@ -54,7 +54,6 @@ export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
   }
   // console.log('see global', itemList);
   console.log("see bookmark list ids: ", getAllIDs(itemList));
-  changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
   
 };
 
@@ -86,14 +85,16 @@ export default function MainPage({navigation}) {
   
   setTimeout(
     () => forceUpdate(),
-    100
+    600
   )
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#374a67";
       const color = item.id === selectedId ? 'black' : '#d7dfea';
-      const bmFill = setBookmark ? 'ios-bookmark' : 'ios-bookmark-outline';
+      const bookmarked = checkBookmarked(item);
+      const bmFill = bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline';
+      
       
       return (
         <Item
@@ -103,13 +104,14 @@ export default function MainPage({navigation}) {
           textColor={{ color }}
           bookmarkFill={{ bmFill }}
           changeState={{ setSelectedBookmark }}
-          bookmarkBoolean={{ setBookmark }}
+          bookmarkBoolean={{ bookmarked }}
         />
       );
     };
 
 return (
   <View style={styles.container}>
+    <Text style={styles.bookmarkHeader}>Bookmarks</Text>
       <FlatList 
           data={global.bookmarkedArticles} 
           renderItem={renderItem}
@@ -156,11 +158,19 @@ return (
         width: "100%",
         height: "70%",
         borderTopLeftRadius: 15,
-        borderTopRightRadius: 15
+        borderTopRightRadius: 15,
       },
       textContent: {
         display: 'flex',
         flexDirection: 'row'
-      }
+      },
+      bookmarkHeader: {
+        fontWeight: "bold",
+        fontSize: 25,
+        alignContent: "center",
+        paddingBottom: 20,
+        paddingTop: 40,
+        color: "#374a67"
+      },
     });
     

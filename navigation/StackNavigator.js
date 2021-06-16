@@ -11,16 +11,25 @@ const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
     return (
-        <Stack.Navigator>
-        <Stack.Screen name="Home" component={MainPage}/>
-        <Stack.Screen name="SingleDisplay" component={SingleDisplay}/>
+    <Stack.Navigator headerMode='screen' screenOptions={{headerStyle:{ backgroundColor: '#ddddff' }}}> 
+        <Stack.Screen 
+          name="Home" 
+          component={MainPage}
+          options={{title: 'Home', headerShown: false}} 
+          />
+
+        <Stack.Screen 
+          name="SingleDisplay" 
+          component={SingleDisplay}
+          options={{title: global.fakeArticle.title}}
+          />
     </Stack.Navigator>
     );
   }
   
   const BookmarksStackNavigator = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator headerMode='none'>
         <Stack.Screen name="Bookmarks" component={Bookmarks} />
       </Stack.Navigator>
     );
@@ -28,7 +37,7 @@ const MainStackNavigator = () => {
 
   const SettingsStackNavigator = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator headerMode='none'>
         <Stack.Screen name="Preferences" component={Preferences}/>
         <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>

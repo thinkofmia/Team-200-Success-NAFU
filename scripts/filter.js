@@ -1,7 +1,12 @@
+export function checkBookmarked(item){
+    if (global.bookmarkedArticles.includes(item)) return true;
+    else return false
+}
+
 export function updateBookmarkedArticles(listArray){
     var filteredArr = [];
     for (var i=0;i<listArray.length;i++){
-        if (global.bookmarkedArticles.includes(listArray[i].id)) tempArr.push(listArray[i]);
+        if (global.bookmarkedArticles.includes(listArray[i])) tempArr.push(listArray[i]);
     }
     return tempArr;
 }
