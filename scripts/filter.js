@@ -23,6 +23,13 @@ export function filterData(listArray, filterOptions, categories){
     }
     
     switch(filterOptions){
+        case 'Free Events':
+            var tempArr2 = [];
+            for (var i=0;i<tempArr.length;i++){
+                if (tempArr[i].price == 0) tempArr2.push(tempArr[i]); 
+            }
+            tempArr = tempArr2;
+            break;
         case 'Sort by Price: Descending':
             tempArr.sort(function(a, b) {
                 return b.price - a.price;

@@ -16,6 +16,9 @@ export default class ComboBox extends Component {
         value: 'Sort by Date: Latest',
       }, {
         value: 'Sort by Date: Oldest',
+      },
+      {
+        value: 'Free Events'
       }
     ];
     
