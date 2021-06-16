@@ -20,6 +20,7 @@ import { checkBookmarked } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
+const tileHeight = 7*screenWidth/16 + 50;
 
 const FadeInView = (props) => {
   const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
@@ -63,15 +64,16 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
       </TouchableHighlight>
       <Text ellipsizeMode = "tail" numberOfLines = {3} style={[styles.title, textColor]} >
         {item.title} </Text>
-      <View>
+    </View>
+    <View style={styles.textContent}>
         <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
-          ${item.price} 
+          {item.price == 0 ? "Free" : item.price <20 ? "$" : item.price <100 ? "$$" : "$$$"
+          } 
         </Text>
         <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
           {item.date.getDate()}/{item.date.getMonth()+1}/{item.date.getFullYear()}
         </Text>
       </View>
-    </View>
   </TouchableOpacity>
 );
 
@@ -168,21 +170,19 @@ return (
         justifyContent: 'center',
       },
       item: {
-        backgroundColor: 'darkblue',
-        width: "40%",
-        height: 360,
-        textAlign: 'center',
-        marginVertical: 8,
-        marginHorizontal: 8,
-        height: tileSize, 
-        width: tileSize, 
-        padding: 2,
-        alignContent: "center",
-        borderRadius: 15,
-        shadowColor: "#000",
-        shadowOffset: {width: 15, height: 15},
-        shadowOpacity: 0.3,
-        shadowRadius: 5
+        backgroundColor: "#dc8db9",
+      textAlign: 'center',
+      marginVertical: 8,
+      marginHorizontal: 8,
+      height: tileHeight, 
+      width: tileSize, 
+      padding: 2,
+      alignContent: "center",
+      borderRadius: 15,
+      shadowColor: "#000",
+      shadowOffset: {width: 15, height: 15},
+      shadowOpacity: 0.3,
+      shadowRadius: 5
       },
       title: {
         flex: 0.9,
