@@ -182,6 +182,28 @@ global.fakeFeed = [
           text: 'Written by your one and only Mianna, the story covers a seal named Lilzzy as she travels around the artic ocean looking for a place called home. To purchase the pre-order of the book, click on the link below.',
           link : 'https://steamcommunity.com/id/Magfuse'
         },
+        {
+          id: '14',
+          category: "Family",
+          date: "30/5/2021",
+          price: 109,
+          title : "Dance Party!",
+          caption: 'Bears Dancing in the Forest', 
+          image: 'https://static.boredpanda.com/blog/wp-content/uploads/2020/02/dancing-baby-bears-cubs-photography-valtteri-mulkahainen-1-1-5e46a1f555003__700.jpg',
+          text: 'As winter turns to spring and the bears stop hibernating, they need to shed their winter coats the only way they know how. Come and Join the dance party!',
+          link : 'https://www.youtube.com/watch?v=ddq42IRjK3E'
+        },
+        {
+          id: '15',
+          category: "Food",
+          date: "30/5/2021",
+          price: 109,
+          title : "Watermelon – A Snack Fit for our Grizzly Bear Friends",
+          caption: 'Bears Dancing in the Forest', 
+          image: 'What About Watermelons?',
+          text: 'Us humans are not the only watermelon lovers in the world. Did you know that bears love watermelon too? Watermelons hold moisture making them a popular choice for a range of animals that have fallen water poor in drought conditions. We don’t blame our furry friends for wanting a taste of our juicy, pink fleshed melons although if you are close to the habitat of natural animals you might want to protect your watermelons if you intend on eating them whole.',
+          link : 'https://www.whataboutwatermelon.com/index.php/2018/04/watermelon-snack-fit-grizzly-bear-friends/'
+        },
 ];
 
 global.fakeArticle = {
