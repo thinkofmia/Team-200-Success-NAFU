@@ -21,7 +21,7 @@ const MainStackNavigator = () => {
         <Stack.Screen 
           name="SingleDisplay" 
           component={SingleDisplay}
-          options={{title: 'My profile'}}
+          options={{title: 'About'}}
           />
     </Stack.Navigator>
     );

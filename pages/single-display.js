@@ -38,20 +38,22 @@ const HomeScreen = () => {
           </View>
           <View style={styles.flexContainer}>
               <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
-              <Text style={{  justifyContent: 'space-between', textAlign:'center'}}>
+              
               <TouchableHighlight style={styles.bookmarkWrapper} onPress={() => {
-                    pushPopBookmarkedArticle(global.fakeArticle, bookmarked);
-                    setTimeout(
-                      () => forceUpdate(),
-                      600
-                    );
-                  }
-                }>
-                    <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name={bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
-                </TouchableHighlight>
+                      pushPopBookmarkedArticle(global.fakeArticle, bookmarked);
+                      setTimeout(
+                        () => forceUpdate(),
+                        600
+                      );
+                    }
+                  }>
+                  <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name={bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
+              </TouchableHighlight>
+              <Text style={{  justifyContent: 'space-between', textAlign:'center', }}>
                 <Text style={styles.subHeader}>Price: ${global.fakeArticle.price}</Text>
               </Text>
-              <Text style={styles.subHeader}> Date: {global.fakeArticle.date.getDate()} {monthNames[global.fakeArticle.date.getMonth()]} {global.fakeArticle.date.getFullYear()} | Category: {global.fakeArticle.category}</Text>
+              <Text style={styles.subHeader}> Date: {global.fakeArticle.date.getDate()} {monthNames[global.fakeArticle.date.getMonth()]} {global.fakeArticle.date.getFullYear()}</Text>
+              <Text style={styles.subHeader}> Category: {global.fakeArticle.category}</Text>
               <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
               <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
           </View>
@@ -119,13 +121,16 @@ const styles=StyleSheet.create({
   bookmarks: {
     width: 50,
     height: 50,
-    marginBottom: 0,
+    marginTop: 10,
     marginLeft: 0,
   },
-  bookmarkText: {
-    marginBottom: 5,
+  bookmarkWrapper: {
+    marginBottom: 0,
     marginLeft: 0,
     fontSize: 16,
+    marginLeft: 13,
+    textAlign: 'center',
+    alignItems: 'center',
   },
   /*
   imgBackground:{
@@ -158,8 +163,8 @@ const styles=StyleSheet.create({
     textAlign: 'justify',
   },
   subHeader : {
-    paddingBottom: 10,
-    paddingLeft: 10,
+    paddingBottom: 0,
+    paddingLeft: 8,
     paddingRight: 10,
     fontSize: 15,
     marginTop: 0,
