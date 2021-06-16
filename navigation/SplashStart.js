@@ -8,7 +8,7 @@ const logo = require('../assets/katze-test.png');
 export default function SplashStart({navigation}) { 
     setTimeout(()=>{
         navigation.replace("BottomTabNavigator");
-    }, 1500);
+    }, 2000);
 
     return(
         <ImageBackground 

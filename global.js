@@ -114,7 +114,7 @@ global.fakeFeed = [
       },
       {
         id: '7',
-        category: "Pets",
+        category: "Education",
         date: new Date('2045-01-01'),
         price: 109,
         title : "New Programming Language Discovered",
