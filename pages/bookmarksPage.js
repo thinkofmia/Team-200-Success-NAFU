@@ -25,6 +25,15 @@ const Item = ({ item, onPress }) => (
 
 export default function Bookmarks({navigation}) {
 
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
+  
+  setTimeout(
+    () => forceUpdate(),
+    100
+  )
+
   const renderItem = ({ item }) => {
     return ( 
       <Item
@@ -37,7 +46,7 @@ export default function Bookmarks({navigation}) {
   return (
     <View style={styles.container}>
       <FlatList
-          data={global.bookmarkedArticle}
+          data={global.bookmarkedArticles}
           renderItem={renderItem}
           keyExtractor={item => item.id}
     />

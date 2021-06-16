@@ -30,7 +30,9 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
           }}
         />
     <View style={styles.textContent}>
-      <TouchableHighlight onPress={() => pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}>
+      <TouchableHighlight onPress={() => {
+        pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}
+    }>
         <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
       </TouchableHighlight>
       <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
@@ -40,7 +42,7 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
 );
 
 export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
-  let itemList = global.bookmarkedArticle;
+  let itemList = global.bookmarkedArticles;
   // console.log("itemid", item.id);
   let itemExists = checkItemExists(itemList, item)
   // console.log("item exsits?", itemExists);
@@ -53,6 +55,7 @@ export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
   // console.log('see global', itemList);
   console.log("see bookmark list ids: ", getAllIDs(itemList));
   changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
+  
 };
 
 function getAllIDs(itemList){
