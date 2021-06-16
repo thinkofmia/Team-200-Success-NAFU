@@ -49,11 +49,11 @@ const HomeScreen = () => {
                   }>
                   <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name={bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
               </TouchableHighlight>
-              <Text style={{  justifyContent: 'space-between', textAlign:'center', }}>
-                <Text style={styles.subHeader}>Price: ${global.fakeArticle.price}</Text>
+              <Text style={styles.subHeader}>
+                <Text>Price: ${global.fakeArticle.price}</Text>{"\n"}
+                <Text> Date: {global.fakeArticle.date.getDate()} {monthNames[global.fakeArticle.date.getMonth()]} {global.fakeArticle.date.getFullYear()}</Text>{"\n"}
+                <Text> Category: {global.fakeArticle.category}</Text>
               </Text>
-              <Text style={styles.subHeader}> Date: {global.fakeArticle.date.getDate()} {monthNames[global.fakeArticle.date.getMonth()]} {global.fakeArticle.date.getFullYear()}</Text>
-              <Text style={styles.subHeader}> Category: {global.fakeArticle.category}</Text>
               <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
               <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
           </View>
@@ -128,7 +128,6 @@ const styles=StyleSheet.create({
     marginBottom: 0,
     marginLeft: 0,
     fontSize: 16,
-    marginLeft: 13,
     textAlign: 'center',
     alignItems: 'center',
   },
@@ -146,7 +145,7 @@ const styles=StyleSheet.create({
     position: 'relative',
     fontSize: 30,
     fontWeight: "bold",
-    marginTop: 50,
+    marginTop: 20,
     textAlign: 'center',
   },
   /*
@@ -159,13 +158,13 @@ const styles=StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     fontSize: 15,
-    marginTop: 0,
+    marginTop: 20,
     textAlign: 'justify',
   },
   subHeader : {
     paddingBottom: 0,
-    paddingLeft: 8,
-    paddingRight: 10,
+    marginLeft: 0,
+    marginRight: 15,
     fontSize: 15,
     marginTop: 0,
     textAlign: 'center',
