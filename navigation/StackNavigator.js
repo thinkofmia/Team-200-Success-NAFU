@@ -11,11 +11,18 @@ const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
     return (
-        <Stack.Navigator headerMode='none'>
-        <Stack.Screen name="Home" component={MainPage} />
+    <Stack.Navigator headerMode='screen' screenOptions={{headerStyle:{ backgroundColor: '#ddddff' }}}> 
+        <Stack.Screen 
+          name="Home" 
+          component={MainPage}
+          options={{title: 'Home', headerShown: false}} 
+          />
+
         <Stack.Screen 
           name="SingleDisplay" 
-          component={SingleDisplay}/>
+          component={SingleDisplay}
+          options={{title: 'My profile'}}
+          />
     </Stack.Navigator>
     );
   }

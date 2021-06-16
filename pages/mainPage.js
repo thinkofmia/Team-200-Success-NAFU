@@ -96,6 +96,7 @@ export default function MainPage({navigation}) {
       const bmFill = setBookmark ? 'ios-bookmark' : 'ios-bookmark-outline';
       
       return (
+        
         <Item
           item={item}
           onPress={() => {global.fakeArticle = item; navigation.navigate('SingleDisplay')}}
