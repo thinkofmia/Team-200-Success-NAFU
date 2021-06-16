@@ -11,16 +11,18 @@ const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
     return (
-        <Stack.Navigator>
-        <Stack.Screen name="Home" component={MainPage}/>
-        <Stack.Screen name="SingleDisplay" component={SingleDisplay}/>
+        <Stack.Navigator headerMode='none'>
+        <Stack.Screen name="Home" component={MainPage} />
+        <Stack.Screen 
+          name="SingleDisplay" 
+          component={SingleDisplay}/>
     </Stack.Navigator>
     );
   }
   
   const BookmarksStackNavigator = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator headerMode='none'>
         <Stack.Screen name="Bookmarks" component={Bookmarks} />
       </Stack.Navigator>
     );
@@ -28,7 +30,7 @@ const MainStackNavigator = () => {
 
   const SettingsStackNavigator = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator headerMode='none'>
         <Stack.Screen name="Preferences" component={Preferences}/>
         <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
