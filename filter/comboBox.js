@@ -16,6 +16,9 @@ export default class ComboBox extends Component {
         value: 'Sort by Date: Latest',
       }, {
         value: 'Sort by Date: Oldest',
+      },
+      {
+        value: 'Free Events'
       }
     ];
     
@@ -40,5 +43,6 @@ const styles = StyleSheet.create({
     width: 270,
     marginTop: 10,
     padding: 10,
-    textAlign:'left'
+    textAlign:'left',
+    borderRadius: 25
   }})

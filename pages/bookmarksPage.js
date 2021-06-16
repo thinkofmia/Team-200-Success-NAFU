@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   FlatList,
   StyleSheet,
@@ -9,7 +9,8 @@ import {
   TouchableOpacity,
   Dimensions,
   Image,
-  TouchableHighlight
+  TouchableHighlight,
+  Animated
 
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -19,6 +20,31 @@ import { checkBookmarked } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
+
+const FadeInView = (props) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 700,
+      }
+    ).start();
+  }, [fadeAnim])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
 
 const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeState, bookmarkBoolean}) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
@@ -35,8 +61,16 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
     }>
         <Ionicons size={30} color="#f9f4e1" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
       </TouchableHighlight>
-      <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
+      <Text ellipsizeMode = "tail" numberOfLines = {3} style={[styles.title, textColor]} >
         {item.title} </Text>
+      <View>
+        <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
+          ${item.price} 
+        </Text>
+        <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
+          {item.date.getDate()}/{item.date.getMonth()+1}/{item.date.getFullYear()}
+        </Text>
+      </View>
     </View>
   </TouchableOpacity>
 );
@@ -111,6 +145,7 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <FadeInView>
     <Text style={styles.bookmarkHeader}>Bookmarks</Text>
       <FlatList 
           data={global.bookmarkedArticles} 
@@ -120,6 +155,7 @@ return (
           numColumns={2}
           changeState={setSelectedBookmark}
     />
+    </FadeInView>
   </View>
   );
   }
@@ -149,10 +185,10 @@ return (
         shadowRadius: 5
       },
       title: {
-        padding: 5,
-        fontSize: 15,
+        flex: 0.9,
         textAlign: 'center',
-        color: "white",
+        fontSize: 13,
+        fontWeight: "bold"
       },
       thumbnails: {
         width: "100%",

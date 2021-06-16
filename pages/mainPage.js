@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   FlatList,
   StyleSheet,
@@ -9,7 +9,8 @@ import {
   TouchableOpacity,
   Dimensions,
   Image,
-  TouchableHighlight
+  TouchableHighlight,
+  Animated
 
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -19,6 +20,34 @@ import { filterData, checkBookmarked } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "July", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+
+  const FadeInView = (props) => {
+    const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
+  
+    React.useEffect(() => {
+      Animated.timing(
+        fadeAnim,
+        {
+          toValue: 1,
+          duration: 700,
+        }
+      ).start();
+    }, [fadeAnim])
+  
+    return (
+      <Animated.View                 // Special animatable View
+        style={{
+          ...props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {props.children}
+      </Animated.View>
+    );
+  }
 
 const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeState, bookmarkBoolean}) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
@@ -35,8 +64,17 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
     }>
         <Ionicons size={30} color="#f9f4e1" style={styles.bookmarks} name={bookmarkBoolean ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
       </TouchableHighlight>
-      <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
+      <Text ellipsizeMode = "tail" numberOfLines = {3} style={[styles.title, textColor]} >
         {item.title} </Text>
+      <View>
+        <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
+          {item.price == 0 ? "Free" : item.price <20 ? "$" : item.price <100 ? "$$" : "$$$"
+          } 
+        </Text>
+        <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
+          {item.date.getDate()}/{item.date.getMonth()+1}/{item.date.getFullYear()}
+        </Text>
+      </View>
     </View>
   </TouchableOpacity>
 );
@@ -111,6 +149,7 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <FadeInView>
     <View style={styles.combo}>
       <Ionicons size={40} color="#374a67" style={styles.filter} name='ios-filter'/>
     <ComboBox />
@@ -123,6 +162,7 @@ return (
           numColumns={2}
           changeState={setSelectedBookmark}
     />
+    </FadeInView>
   </View>
   );
   }
@@ -152,7 +192,7 @@ return (
       shadowRadius: 5
     },
     title: {
-      padding: 2,
+      
       flex: 0.9,
       textAlign: 'center',
       fontSize: 13,
