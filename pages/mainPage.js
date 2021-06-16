@@ -70,11 +70,11 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
         {item.title} </Text>
     </View>
     <View style={styles.textContent}>
-        <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
+        <Text ellipsizeMode = "tail" style={[styles.details, textColor]} >
           {item.price == 0 ? "Free" : item.price <20 ? "$" : item.price <100 ? "$$" : "$$$"
           } 
         </Text>
-        <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
+        <Text ellipsizeMode = "tail" style={[styles.details, textColor]} >
           {item.date.getDate()}/{item.date.getMonth()+1}/{item.date.getFullYear()}
         </Text>
       </View>
@@ -221,7 +221,7 @@ return (
     },
     thumbnails: {
       width: "100%",
-      height: "65%",
+      height: "67%",
       borderTopLeftRadius: 15,
       borderTopRightRadius: 15
     },
@@ -239,6 +239,11 @@ return (
     },
     filter: {
       padding: 10
+    },
+    details: {
+      fontSize: 11,
+      flex: 0.9,
+      textAlign: 'center',
     }
   });
   
