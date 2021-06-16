@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, Image, Linking, FlatList, TouchableOpacity } fr
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { color } from 'react-native-reanimated';
+import { filterData } from '../scripts/filter';
 
   const Item = ({ item, onPress, backgroundColor, textColor, fontWeight }) => (
     <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
@@ -30,6 +31,7 @@ export default function Preferences({navigation}) {
             }
               else {global.userPreferences.push(item);}
               console.log(global.userPreferences);
+              global.displayFeed = filterData(global.fakeFeed, global.filterOption, global.userPreferences);
               setRefreshPage("refresh");
               forceUpdate();
           }

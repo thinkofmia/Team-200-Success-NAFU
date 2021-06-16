@@ -2,6 +2,7 @@
 //import 'firebase/firestore';
 //import { useState } from 'react/cjs/react.production.min';
 import React, { useState, useEffect } from 'react';
+import { filterData } from './scripts/filter';
 
 global.bookmarked = [
   {
@@ -31,11 +32,13 @@ global.bookmarkedArticle = [];
 
 global.preferenceList = ['Food', 'Romance', 'Sports', 'Family', 'Movies', 'Travel', 'Arts', 'Education', 'Networking'];
 
+global.filterOption = 'Sort by Date: Latest';
+
 global.fakeFeed = [
   {
     id : "0",
     category: "Food",
-    date: "15/6/2021",
+    date: new Date('2021-06-15'),
     price: 100,
     title : "Polar Bear found drinking by West Coast Park",
     caption: 'Polar Bear found drinking by West Coast Park, having Magfuse juices.',
@@ -47,7 +50,7 @@ global.fakeFeed = [
   {
     id: '1',
     category: "Romance",
-    date: "10/6/2021",
+    date: new Date('2021-06-10'),
     price: 25,
     title : "Polar Bears kissing in public",
     caption: 'Two polar bears caught kissing out in public. GROSSSSS~',
@@ -58,7 +61,7 @@ global.fakeFeed = [
   {
     id: '2',
     category: "Sports",
-    date: "5/1/2010",
+    date: new Date('2010-01-05'),
     price: 690,
     title : "Surfing Bear by NTU UWAVE",
     caption: 'Mr Polar surfing up the NTU UWAVEs. Come see him now!',
@@ -69,7 +72,7 @@ global.fakeFeed = [
   {
       id: '3',
       category: "Family",
-      date: "13/2/1990",
+      date: new Date('1990-02-13'),
       price: 10,
       title : "Population of Polar Bear in Asia",
       caption: 'Polar bears been breeding all over Singapore and Malaysia. WTH is going on>!?!?!',
@@ -80,7 +83,7 @@ global.fakeFeed = [
   {
       id: '4',
       category: "Movies",
-      date: "4/5/2000",
+      date: new Date('2000-05-04'),
       price: 8,
       title : "Scaring in Cinema",
       caption: 'Bear hijacks cinemas with popcorn. Scares of 0 moviegoers due to covid-19.',
@@ -91,7 +94,7 @@ global.fakeFeed = [
     {
     id: '5',
     category: "Sports",
-    date: "6/12/2015",
+    date: new Date('2015-12-06'),
     price: 4390,
     title : "Bears in Olympics",
     caption: 'Bears taking part in the olympics 2021 since the humans were all quarantined. What a day.', 
@@ -102,7 +105,7 @@ global.fakeFeed = [
     {
       id: '6',
       category: "Sports",
-      date: "9/9/1999",
+      date: new Date('1999-09-09'),
       price: 2400,
       title : "Bears?",
       caption: 'Are these bears?.', 
@@ -113,7 +116,7 @@ global.fakeFeed = [
       {
         id: '7',
         category: "Pets",
-        date: "1/1/2045",
+        date: new Date('2045-01-01'),
         price: 109,
         title : "New Programming Language Discovered",
         caption: 'MaoScript? Hmmm...', 
@@ -125,7 +128,7 @@ global.fakeFeed = [
         {
           id: '8',
           category: "Travel",
-          date: "12/8/2020",
+          date: new Date('2020-08-12'),
           price: 200,
           title : "Boxplane invented in 2020",
           image: 'https://cdn5.vectorstock.com/i/1000x1000/95/79/teddy-bear-made-plane-vector-3069579.jpg',
@@ -135,7 +138,7 @@ global.fakeFeed = [
         {
           id: '9',
           category: "Romance",
-          date: "22/10/2011",
+          date: new Date('2011-10-22'),
           price: 10,
           title : "Of Fire and Ice",
           image: 'https://i.dailymail.co.uk/i/pix/2014/07/14/article-0-1FA10FF600000578-698_634x397.jpg',
@@ -145,7 +148,7 @@ global.fakeFeed = [
         {
           id: '10',
           category: "Food",
-          date: "13/8/2009",
+          date: new Date('2009-08-13'),
           price: 50,
           title : "Cattegetti",
           image: 'https://i.ytimg.com/vi/tOg9wzhQWLU/maxresdefault.jpg',
@@ -155,7 +158,7 @@ global.fakeFeed = [
         {
           id: '11',
           category: "Family",
-          date: "3/1/2019",
+          date: new Date('2019-01-03'),
           price: 1000,
           title : "White 'Sheep' of the Breed",
           image: 'https://barkpost.com/wp-content/uploads/2015/06/dog-family-reunion-2.jpg',
@@ -165,7 +168,7 @@ global.fakeFeed = [
         {
           id: '12',
           category: "Movies",
-          date: "18/12/2008",
+          date: new Date('2008-12-18'),
           price: 12,
           title : "Ratatouille 2",
           image: 'https://www.wired.com/images_blogs/underwire/images/2007/04/30/043007ratatouilee.jpg',
@@ -175,7 +178,7 @@ global.fakeFeed = [
         {
           id: '13',
           category: "Travel",
-          date: "8/1/2021",
+          date: new Date('2021-01-08'),
           price: 900,
           title : "Journey of the Hermit Seal",
           image: 'https://stickershop.line-scdn.net/stickershop/v1/product/7359238/LINEStorePC/main.png;compress=true',
@@ -185,7 +188,7 @@ global.fakeFeed = [
         {
           id: '14',
           category: "Family",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "Dance Party!",
           caption: 'Bears Dancing in the Forest', 
@@ -196,7 +199,7 @@ global.fakeFeed = [
         {
           id: '15',
           category: "Food",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "Watermelon – A Snack Fit for our Grizzly Bear Friends",
           caption: 'What About Watermelons?', 
@@ -207,7 +210,7 @@ global.fakeFeed = [
         {
           id: '16',
           category: "Movies",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "Paddington the Movie",
           caption: 'Marmalade Sandwiches. mmm', 
@@ -218,7 +221,7 @@ global.fakeFeed = [
         {
           id: '17',
           category: "Travel",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "Travel tips!",
           caption: 'Wanderlust!', 
@@ -229,7 +232,7 @@ global.fakeFeed = [
         {
           id: '18',
           category: "Arts",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "Painting Lessons",
           caption: 'Get your creative juices flowing!', 
@@ -240,7 +243,7 @@ global.fakeFeed = [
         {
           id: '19',
           category: "Arts",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "The Smithsonian",
           caption: 'The world before us.', 
@@ -251,7 +254,7 @@ global.fakeFeed = [
         {
           id: '20',
           category: "Arts",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "Museums for Otakus",
           caption: 'Otaku!', 
@@ -262,7 +265,7 @@ global.fakeFeed = [
         {
           id: '21',
           category: "Arts",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "Painting with Elephants",
           caption: 'Can animals ever be artists?', 
@@ -273,7 +276,7 @@ global.fakeFeed = [
         {
           id: '22',
           category: "Education",
-          date: "30/5/2021",
+          date: new Date('2021-05-30'),
           price: 109,
           title : "Learn Mathematics",
           caption: 'Animals can do ‘almost math’', 
@@ -284,7 +287,7 @@ global.fakeFeed = [
         {
           id: '23',
           category: "Education",
-          date: "30/5/2021",
+          date: new Date('2021-05-20'),
           price: 109,
           title : "Using Technology is easy!",
           caption: 'Become savvy with Technology', 
@@ -295,7 +298,7 @@ global.fakeFeed = [
         {
           id: '24',
           category: "Education",
-          date: "30/5/2021",
+          date: new Date('2021-05-10'),
           price: 109,
           title : "Tech dogs!!!",
           caption: 'Learn to code', 
@@ -306,7 +309,7 @@ global.fakeFeed = [
         {
           id: '25',
           category: "Education",
-          date: "30/5/2021",
+          date: new Date('2021-05-03'),
           price: 109,
           title : "Learning doggos",
           caption: 'How to be a good boy?', 
@@ -317,7 +320,7 @@ global.fakeFeed = [
         {
           id: '26',
           category: "Networking",
-          date: "30/5/2021",
+          date: new Date('2021-05-12'),
           price: 109,
           title : "Travel tips!",
           caption: 'Wanderlust!', 
@@ -328,7 +331,7 @@ global.fakeFeed = [
         {
           id: '27',
           category: "Networking",
-          date: "30/5/2021",
+          date: new Date('2021-06-30'),
           price: 109,
           title : "The power of networking",
           caption: 'Learn how to network', 
@@ -339,7 +342,7 @@ global.fakeFeed = [
         {
           id: '28',
           category: "Networking",
-          date: "30/5/2021",
+          date: new Date('2021-06-12'),
           price: 109,
           title : "Social Networking for dummies",
           caption: 'Social Networking?', 
@@ -350,7 +353,7 @@ global.fakeFeed = [
         {
           id: '29',
           category: "Networking",
-          date: "30/5/2021",
+          date: new Date('2021-06-11'),
           price: 109,
           title : "Working like Ants",
           caption: 'Ants teach networking', 
@@ -361,7 +364,7 @@ global.fakeFeed = [
         {
           id: '30',
           category: "Romance",
-          date: "30/5/2021",
+          date: new Date('2021-06-25'),
           price: 109,
           title : "Tinder for dummies",
           caption: 'Learning how to romance', 
@@ -372,7 +375,7 @@ global.fakeFeed = [
         {
           id: '31',
           category: "Romance",
-          date: "30/5/2021",
+          date: new Date('2021-06-20'),
           price: 109,
           title : "When to Let Go",
           caption: 'Want Freedom?', 
@@ -383,7 +386,7 @@ global.fakeFeed = [
         {
           id: '32',
           category: "Food",
-          date: "30/5/2021",
+          date: new Date('2021-06-14'),
           price: 109,
           title : "Salt and Pepper",
           caption: 'Cookiig time!', 
@@ -394,7 +397,7 @@ global.fakeFeed = [
         {
           id: '33',
           category: "Food",
-          date: "30/5/2021",
+          date: new Date('2021-06-19'),
           price: 109,
           title : "Baking for Dummies",
           caption: 'Buns in the oven', 
@@ -405,7 +408,7 @@ global.fakeFeed = [
         {
           id: '34',
           category: "Food",
-          date: "30/5/2021",
+          date: new Date('2021-06-18'),
           price: 109,
           title : "How to eat Pasta",
           caption: 'Eat pasta like a boss', 
@@ -416,7 +419,7 @@ global.fakeFeed = [
         {
           id: '35',
           category: "Sports",
-          date: "30/5/2021",
+          date: new Date('2021-06-21'),
           price: 109,
           title : "Playing Field",
           caption: 'Jump!', 
@@ -425,6 +428,8 @@ global.fakeFeed = [
           link : 'https://www.theatlantic.com/photo/2018/02/animals-on-the-playing-field/552134/'
         },
 ];
+
+global.displayFeed = filterData(global.fakeFeed, global.filterOption, global.userPreferences);
 
 global.fakeArticle = {
   id : "1",

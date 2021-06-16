@@ -15,7 +15,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ComboBox from '../filter/comboBox';
 
-import { filterData } from '../scripts/filter';'./scripts/filter'
+import { filterData } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
@@ -111,8 +111,8 @@ return (
       <Ionicons size={40} color="#374a67" style={styles.filter} name='ios-filter'/>
     <ComboBox />
     </View>
-      <FlatList
-          data={filterData(global.fakeFeed, "none", global.userPreferences)} 
+      <FlatList 
+          data={global.displayFeed} 
           renderItem={renderItem}
           keyExtractor={item => item.id}
           extraData={selectedId}
