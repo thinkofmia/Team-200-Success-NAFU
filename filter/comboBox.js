@@ -18,6 +18,7 @@ export default class ComboBox extends Component {
       return (
         <Dropdown style = {styles.dropdown}
           data={data}
+          value = 'Sort by Date: Latest'
         />
       );
     }
