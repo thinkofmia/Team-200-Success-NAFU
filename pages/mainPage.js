@@ -15,7 +15,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ComboBox from '../filter/comboBox';
 
-import { filterData } from '../scripts/filter';'./scripts/filter'
+import { filterData } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
@@ -30,7 +30,9 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
           }}
         />
     <View style={styles.textContent}>
-      <TouchableHighlight onPress={() => pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}>
+      <TouchableHighlight onPress={() => {
+        pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}
+    }>
         <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
       </TouchableHighlight>
       <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
@@ -40,7 +42,7 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
 );
 
 export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
-  let itemList = global.bookmarkedArticle;
+  let itemList = global.bookmarkedArticles;
   // console.log("itemid", item.id);
   let itemExists = checkItemExists(itemList, item)
   // console.log("item exsits?", itemExists);
@@ -53,6 +55,7 @@ export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
   // console.log('see global', itemList);
   console.log("see bookmark list ids: ", getAllIDs(itemList));
   changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
+  
 };
 
 function getAllIDs(itemList){
@@ -88,9 +91,9 @@ export default function MainPage({navigation}) {
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
-      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#21a0a0";
-      const color = item.id === selectedId ? 'black' : 'black';
-      const bmFill = setBookmark ? 'ios-bookmarks' : 'ios-bookmarks-outline';
+      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#374a67";
+      const color = item.id === selectedId ? 'black' : '#d7dfea';
+      const bmFill = setBookmark ? 'ios-bookmark' : 'ios-bookmark-outline';
       
       return (
         <Item
@@ -107,9 +110,12 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <View style={styles.combo}>
+      <Ionicons size={40} color="#374a67" style={styles.filter} name='ios-filter'/>
     <ComboBox />
-      <FlatList
-          data={filterData(global.fakeFeed, "none", global.userPreferences)} 
+    </View>
+      <FlatList 
+          data={global.displayFeed} 
           renderItem={renderItem}
           keyExtractor={item => item.id}
           extraData={selectedId}
@@ -123,7 +129,7 @@ return (
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fcfff7',
+      backgroundColor: '#d7dfea',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -148,7 +154,8 @@ return (
       padding: 2,
       flex: 0.9,
       textAlign: 'center',
-      fontSize: 13
+      fontSize: 13,
+      fontWeight: "bold"
     },
     thumbnails: {
       width: "100%",
@@ -158,7 +165,17 @@ return (
     },
     textContent: {
       display: 'flex',
-      flexDirection: 'row'
+      flexDirection: 'row',
     },
+    combo: {
+      width: '90%',
+      textAlign: 'left',
+      alignItems: 'flex-start',
+      display: 'flex',
+      flexDirection:'row',
+    },
+    filter: {
+      padding: 10
+    }
   });
   

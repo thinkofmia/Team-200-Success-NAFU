@@ -4,9 +4,9 @@ import { View, StyleSheet, Text, Image, Linking, Button } from 'react-native';
 export default function Settings({navigation}) {
   return (
     <View style={styles.container}>
-        <Text style={styles.eventsHeader}>This is the settings page</Text>
+        <Text style={styles.eventsHeader}>What events are you interested in?</Text>
         <Button
-          title="Select Your Preferences"
+          title="select"
           onPress={() => navigation.navigate('Preferences')}
         />
     </View>
