@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ComboBox from '../filter/comboBox';
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 import { checkBookmarked } from '../scripts/filter';
 
@@ -147,6 +148,23 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <GestureRecognizer
+    onSwipeUp={(state) => {
+      console.log(state);
+    }}
+    onSwipeDown={(state) => {
+      console.log(state)
+    }}
+    onSwipeLeft={(state) => {
+      console.log(state);
+      
+
+    }}
+    onSwipeRight={(state) => {
+      console.log(state);
+      navigation.navigate('Home');
+    }}
+    >
     <FadeInView>
     <Text style={styles.bookmarkHeader}>Bookmarks</Text>
       <FlatList 
@@ -158,6 +176,7 @@ return (
           changeState={setSelectedBookmark}
     />
     </FadeInView>
+    </GestureRecognizer>
   </View>
   );
   }

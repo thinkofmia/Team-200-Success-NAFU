@@ -153,10 +153,23 @@ export default function MainPage({navigation}) {
 return (
   <View style={styles.container}>
     <GestureRecognizer
-    onSwipeUp={(state) => console.log(state)}
-    onSwipeDown={(state) => console.log(state)}
-    onSwipeLeft={(state) => console.log(state)}
-    onSwipeRight={(state) => console.log(state)}
+    onSwipeUp={(state) => {
+      console.log(state);
+    }}
+    onSwipeDown={(state) => {
+      console.log(state)
+    }}
+    onSwipeLeft={(state) => {
+      console.log(state);
+      navigation.navigate('Bookmarks');
+
+    }}
+    onSwipeRight={(state) => {
+      console.log(state);
+      navigation.navigate('Preferences');
+      
+
+    }}
     >
     <FadeInView>
     <View style={styles.combo}>

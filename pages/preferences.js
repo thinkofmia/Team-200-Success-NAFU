@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { color } from 'react-native-reanimated';
 import { filterData } from '../scripts/filter';
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
   const Item = ({ item, onPress, backgroundColor, textColor, fontWeight }) => (
     <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
@@ -47,6 +48,23 @@ export default function Preferences({navigation}) {
 
   return (
     <View style={styles.container}>
+      <GestureRecognizer
+    onSwipeUp={(state) => {
+      console.log(state);
+    }}
+    onSwipeDown={(state) => {
+      console.log(state)
+    }}
+    onSwipeLeft={(state) => {
+      console.log(state);
+      
+      navigation.navigate('Home');
+    }}
+    onSwipeRight={(state) => {
+      console.log(state);
+
+    }}
+    >
         <Text style={styles.eventsHeader}>Select your preferences</Text>
         <FlatList
         
@@ -56,6 +74,7 @@ export default function Preferences({navigation}) {
             keyExtractor={item => item.id}
             extraData={selectedId}
       />
+      </GestureRecognizer>
     </View>
     );
   }
@@ -66,7 +85,7 @@ const styles=StyleSheet.create({
     backgroundColor: '#f9f4e1',
     alignItems: 'center',
     justifyContent: 'center',
-    width: "100%",
+    width: '100%',
   },
   list: {
     width: "90%",
