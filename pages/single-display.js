@@ -8,6 +8,10 @@ const BANNER_H = 350;
 
 const HomeScreen = () => {
   const scrollA = useRef(new Animated.Value(0)).current;
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+  ];
+
   return (
     <View>
       <Animated.ScrollView 
@@ -32,7 +36,7 @@ const HomeScreen = () => {
                 <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks'/>
                 <Text style={styles.subHeader}>Price: ${global.fakeArticle.price}</Text>
               </Text>
-              <Text style={styles.subHeader}> Date: {global.fakeArticle.date.toString()} | Category: {global.fakeArticle.category}</Text>
+              <Text style={styles.subHeader}> Date: {global.fakeArticle.date.getDate()} {monthNames[global.fakeArticle.date.getMonth()]} {global.fakeArticle.date.getFullYear()} | Category: {global.fakeArticle.category}</Text>
               <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
               <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
           </View>
