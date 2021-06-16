@@ -40,5 +40,6 @@ const styles = StyleSheet.create({
     width: 270,
     marginTop: 10,
     padding: 10,
-    textAlign:'left'
+    textAlign:'left',
+    borderRadius: 25
   }})
