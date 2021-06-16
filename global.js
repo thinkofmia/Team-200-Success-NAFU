@@ -29,6 +29,8 @@ global.userPreferences = [];
 global.selectedArticle = 0;
 global.bookmarkedArticle = [];
 
+global.preferenceList = ['Food', 'Romance', 'Sports', 'Family', 'Movies', 'Travel'];
+
 global.fakeFeed = [
   {
     id : "0",
