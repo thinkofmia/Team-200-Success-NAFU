@@ -28,7 +28,6 @@ global.bookmarked = [
 global.userPreferences = [];
 
 global.selectedArticle = 0;
-global.bookmarkedArticle = [];
 
 global.preferenceList = ['Food', 'Romance', 'Sports', 'Family', 'Movies', 'Travel', 'Arts', 'Education', 'Networking'];
 
@@ -432,14 +431,18 @@ global.fakeFeed = [
 global.displayFeed = filterData(global.fakeFeed, global.filterOption, global.userPreferences);
 
 global.fakeArticle = {
-  id : "1",
-  title : "Polar Bear found drinking by West Coast Park",
-  category: "Food",
-  date: new Date(),
-  image : 'https://www.themebeta.com/media/cache/400x225/files/windows/images/201907/26/3872e0062b2df0aecdd5b6568f5e16d9.jpeg',
-  text : "Wanna get drunk and groove with polar bears on a Monday Blues in a Post Covid Era? Join us and DJ Magnus as we set up a chilly bar for you in Magnus's Fusion Bar today. Register now!",
-  link : 'https://steamcommunity.com/id/Magfuse'
-}
+  id: '35',
+  category: "Sports",
+  date: new Date('2021-06-21'),
+  price: 109,
+  title : "Playing Field",
+  caption: 'Jump!', 
+  image: 'https://cdn.theatlantic.com/thumbor/pa0Z9YjVvSl1afzqR1pqOGsIZpI=/600x393/media/img/photo/2018/02/animals-on-the-playing-field/a01_545766130/original.jpg',
+  text: 'Join us next week to jump higher!',
+  link : 'https://www.theatlantic.com/photo/2018/02/animals-on-the-playing-field/552134/'
+};
+
+global.bookmarkedArticles = [global.fakeArticle];
 
 /*
 const configuration = {

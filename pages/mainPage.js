@@ -15,7 +15,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ComboBox from '../filter/comboBox';
 
-import { filterData } from '../scripts/filter';
+import { filterData, checkBookmarked } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
@@ -30,8 +30,10 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
           }}
         />
     <View style={styles.textContent}>
-      <TouchableHighlight onPress={() => pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}>
-        <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
+      <TouchableHighlight onPress={() => {
+        pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}
+    }>
+        <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkBoolean ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
       </TouchableHighlight>
       <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
         {item.title} </Text>
@@ -40,7 +42,7 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
 );
 
 export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
-  let itemList = global.bookmarkedArticle;
+  let itemList = global.bookmarkedArticles;
   // console.log("itemid", item.id);
   let itemExists = checkItemExists(itemList, item)
   // console.log("item exsits?", itemExists);
@@ -52,7 +54,8 @@ export function pushPopBookmarkedArticle(item, changeState, bookmarkBoolean){
   }
   // console.log('see global', itemList);
   console.log("see bookmark list ids: ", getAllIDs(itemList));
-  changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
+  //changeState.setSelectedBookmark(!bookmarkBoolean.setBookmark);
+  
 };
 
 function getAllIDs(itemList){
@@ -90,6 +93,7 @@ export default function MainPage({navigation}) {
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#374a67";
       const color = item.id === selectedId ? 'black' : '#d7dfea';
+      const bookmarked = checkBookmarked(item);
       const bmFill = setBookmark ? 'ios-bookmark' : 'ios-bookmark-outline';
       
       return (
@@ -100,7 +104,7 @@ export default function MainPage({navigation}) {
           textColor={{ color }}
           bookmarkFill={{ bmFill }}
           changeState={{ setSelectedBookmark }}
-          bookmarkBoolean={{ setBookmark }}
+          bookmarkBoolean={ bookmarked }
         />
       );
     };
