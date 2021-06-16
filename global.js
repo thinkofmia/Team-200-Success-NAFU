@@ -122,17 +122,6 @@ global.fakeFeed = [
         link : 'https://steamcommunity.com/id/Magfuse'
         },
         {
-          id: '7',
-          category: "Pets",
-          date: "1/1/2045",
-          price: 109,
-          title : "New Programming Language Discovered",
-          caption: 'MaoScript? Hmmm...', 
-          image: 'https://scx2.b-cdn.net/gfx/news/hires/2020/careforcatss.jpg',
-          text: 'A new programming language has been discovered! Researchers have look at the genetics of cats and surprisingly they realised that cats have the ability to code, just like mankind. They have the capability to adapt, improvise and overcome those challenges infused with complex logical thinking. Introducing the new programming language MaoScript, a new programming language cater to communicate with cats. This programming language have the capability to use Cats Intelligence framework to learn a deep neural cats network all thanks to the PyKatze package. Available at the price of $109. Don\'t wait, get yours today!',
-          link : 'https://steamcommunity.com/id/Magfuse'
-        },
-        {
           id: '8',
           category: "Family",
           date: "30/5/2021",
@@ -149,8 +138,8 @@ global.fakeFeed = [
           date: "30/5/2021",
           price: 109,
           title : "Watermelon – A Snack Fit for our Grizzly Bear Friends",
-          caption: 'Bears Dancing in the Forest', 
-          image: 'What About Watermelons?',
+          caption: 'What About Watermelons?', 
+          image: 'https://i.pinimg.com/564x/7b/96/5a/7b965a62b066e0b1f9902a2c137c134b.jpg',
           text: 'Us humans are not the only watermelon lovers in the world. Did you know that bears love watermelon too? Watermelons hold moisture making them a popular choice for a range of animals that have fallen water poor in drought conditions. We don’t blame our furry friends for wanting a taste of our juicy, pink fleshed melons although if you are close to the habitat of natural animals you might want to protect your watermelons if you intend on eating them whole.',
           link : 'https://www.whataboutwatermelon.com/index.php/2018/04/watermelon-snack-fit-grizzly-bear-friends/'
         },
