@@ -47,7 +47,7 @@ const HomeScreen = () => {
                       );
                     }
                   }>
-                  <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name={bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
+                  <Ionicons size={30} color="#6f8576" style={styles.bookmarks} name={bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
               </TouchableHighlight>
               <Text style={styles.subHeader}>
                 <Text>Price: ${global.fakeArticle.price}</Text>{"\n"}

@@ -151,7 +151,7 @@ return (
   <View style={styles.container}>
     <FadeInView>
     <View style={styles.combo}>
-      <Ionicons size={40} color="#374a67" style={styles.filter} name='ios-filter'/>
+      <Ionicons size={40} color="#6f8576" style={styles.filter} name='ios-filter'/>
     <ComboBox />
     </View>
       <FlatList 
