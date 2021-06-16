@@ -170,6 +170,7 @@ return (
       alignItems: 'flex-start',
       display: 'flex',
       flexDirection:'row',
+      marginTop: 40,
     },
     filter: {
       padding: 10
