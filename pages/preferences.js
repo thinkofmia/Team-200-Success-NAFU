@@ -19,7 +19,7 @@ export default function Preferences({navigation}) {
 
     const renderItem = ({ item }) => {
         const backgroundColor = global.userPreferences.includes(item) ? "#374a67" : "#616283";
-        const color = global.userPreferences.includes(item) ? 'white' : '#fde8e9';
+        const color = global.userPreferences.includes(item) ? '#fde8e9' : '#fde8e9';
         const fontWeight = global.userPreferences.includes(item) ? 'bold' : 'normal';
     
         return (

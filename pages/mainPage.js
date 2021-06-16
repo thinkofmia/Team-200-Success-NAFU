@@ -101,8 +101,8 @@ export default function MainPage({navigation}) {
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
-      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#374a67";
-      const color = item.id === selectedId ? 'black' : '#d7dfea';
+      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#eb98ac";
+      const color = item.id === selectedId ? 'black' : '#f9f4e1';
       const bookmarked = checkBookmarked(item);
       const bmFill = setBookmark ? 'ios-bookmark' : 'ios-bookmark-outline';
       
@@ -141,7 +141,7 @@ return (
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#d7dfea',
+      backgroundColor: '#f9f4e1',
       alignItems: 'center',
       justifyContent: 'center',
     },
