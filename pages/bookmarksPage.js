@@ -35,8 +35,16 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
     }>
         <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
       </TouchableHighlight>
-      <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
+      <Text ellipsizeMode = "tail" numberOfLines = {3} style={[styles.title, textColor]} >
         {item.title} </Text>
+      <View>
+        <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
+          ${item.price} 
+        </Text>
+        <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
+          {item.date.getDate()}/{item.date.getMonth()+1}/{item.date.getFullYear()}
+        </Text>
+      </View>
     </View>
   </TouchableOpacity>
 );
@@ -149,10 +157,10 @@ return (
         shadowRadius: 5
       },
       title: {
-        padding: 5,
-        fontSize: 15,
+        flex: 0.9,
         textAlign: 'center',
-        color: "white",
+        fontSize: 13,
+        fontWeight: "bold"
       },
       thumbnails: {
         width: "100%",
