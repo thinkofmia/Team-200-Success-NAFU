@@ -3,7 +3,10 @@ import { Dropdown } from 'react-native-material-dropdown-v2';
 import { StyleSheet } from 'react-native';
 import { filterData } from '../scripts/filter';
 
+
+
 export default class ComboBox extends Component {
+  
     render() {
       let data = [{
         value: 'Sort by Price: Descending',
@@ -15,24 +18,20 @@ export default class ComboBox extends Component {
         value: 'Sort by Date: Oldest',
       }
     ];
+    
    
       return (
         <Dropdown style = {styles.dropdown}
           data={data}
           value = {global.filterOption}
-          onChangeText = {() => {
+          onChangeText = {(value) => {
+            global.filterOption = value;
             global.displayFeed = filterData(global.fakeFeed, global.filterOption, global.userPreferences);
-            value => this.onChangeHandler(value)
         }}
         />
       );
     }
     
-  }
-
-  const onChangeHandler = (value) => {
-    global.filterOption = value;
-    console.log(`Selected value: ${value}`);
   }
 
 const styles = StyleSheet.create({
