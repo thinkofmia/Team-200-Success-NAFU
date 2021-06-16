@@ -12,17 +12,22 @@ import BottomTabNavigator from "./navigation/TabNavigator";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import Splash from "./navigation/SplashStart";
 
 //Import external scripts
 import './global';
 import './scripts/filter'
 // other code
-
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-     <BottomTabNavigator />
+      <Stack.Navigator>
+          <Stack.Screen name="Splash" component={Splash} />
+          <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
+      </Stack.Navigator>
+      
     </NavigationContainer>
   );
 }
