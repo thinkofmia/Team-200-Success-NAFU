@@ -30,7 +30,7 @@ const BottomTabNavigator = () => {
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
+        activeTintColor: '#374a67',
         inactiveTintColor: 'gray',
       }}>
       <Tab.Screen name="Preferences" component={SettingsStackNavigator} />
