@@ -27,7 +27,6 @@ export default function App() {
           <Stack.Screen name="Splash" component={Splash} />
           <Stack.Screen headerMode='none' name="BottomTabNavigator" component={BottomTabNavigator} />
       </Stack.Navigator>
-      
     </NavigationContainer>
   );
 }
