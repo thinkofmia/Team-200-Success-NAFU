@@ -89,6 +89,9 @@ const styles=StyleSheet.create({
   },
   list: {
     width: "90%",
+    alignContent:'center',
+    paddingLeft:36,
+    paddingRight:36,
   },
   item: {
     width: "90%",
