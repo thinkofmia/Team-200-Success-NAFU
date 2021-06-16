@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Animated, View, StyleSheet, Text, Image, Linking, Button, ScrollView, TouchableHighlight } from 'react-native';
+import { Animated, View, StyleSheet, Text, Image, Linking, Button, ScrollView, TouchableHighlight
+, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 //import TopNavigation from './top-navigation';
 
@@ -55,7 +56,10 @@ const HomeScreen = () => {
                 <Text> Category: {global.fakeArticle.category}</Text>
               </Text>
               <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
-              <Button backgroundColor= "#6f8576" onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
+              <TouchableOpacity style={styles.linkButton}
+              onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to event">
+                <Text style = {styles.link}> Link to event </Text>
+              </TouchableOpacity>
           </View>
       </Animated.ScrollView>
     </View>
@@ -141,6 +145,7 @@ const styles=StyleSheet.create({
   */
   flexContainer: {
       display: "flex",
+      backgroundColor: "#f9f4e1"
   },
   eventsHeader: {
     position: 'relative',
@@ -186,6 +191,19 @@ const styles=StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  link :{ 
+    alignItems: "center",
+    color: "#f9f4e1",
+    alignSelf: "center",
+    justifyContent: "center"
+  },
+  linkButton :{
+    backgroundColor: "#6f8576",
+    color: "#6f8576" ,
+    width: "100%" ,
+    height: 40,
+    justifyContent: "center" 
+  }
   
 })
 
