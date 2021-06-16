@@ -45,8 +45,8 @@ const BottomTabNavigator = () => {
         },
       })}
       tabBarOptions={{
-        activeTintColor: '#374a67',
-        inactiveTintColor: 'gray',
+        activeTintColor: '#658576',
+        inactiveTintColor: '#658576',
       }}>
       <Tab.Screen name="Preferences" component={SettingsStackNavigator} />
       <Tab.Screen name="Home" component={MainStackNavigator} />

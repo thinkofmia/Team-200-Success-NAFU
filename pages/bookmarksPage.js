@@ -19,8 +19,8 @@ import ComboBox from '../filter/comboBox';
 import { checkBookmarked } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
-const tileSize = 7*screenWidth/16;
-const tileHeight = 7*screenWidth/16 + 50;
+const tileSize = 9*screenWidth/20;
+const tileHeight = 9*screenWidth/20;
 
 const FadeInView = (props) => {
   const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
@@ -192,7 +192,7 @@ return (
       },
       thumbnails: {
         width: "100%",
-        height: "70%",
+        height: "65%",
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
       },
@@ -204,6 +204,7 @@ return (
         fontWeight: "bold",
         fontSize: 25,
         alignContent: "center",
+        alignSelf: "center",
         paddingBottom: 20,
         paddingTop: 70,
         color: "#799cf6"
