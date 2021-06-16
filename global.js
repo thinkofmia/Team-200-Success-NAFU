@@ -124,8 +124,6 @@ global.fakeFeed = [
 
         {
           id: '8',
-<<<<<<< HEAD
-=======
           category: "Travel",
           date: "12/8/2020",
           price: 200,
@@ -186,7 +184,6 @@ global.fakeFeed = [
         },
         {
           id: '14',
->>>>>>> 02067aa95dc6921b21f1958f2115f1102cea7151
           category: "Family",
           date: "30/5/2021",
           price: 109,
@@ -206,6 +203,28 @@ global.fakeFeed = [
           image: 'https://i.pinimg.com/564x/7b/96/5a/7b965a62b066e0b1f9902a2c137c134b.jpg',
           text: 'Us humans are not the only watermelon lovers in the world. Did you know that bears love watermelon too? Watermelons hold moisture making them a popular choice for a range of animals that have fallen water poor in drought conditions. We don’t blame our furry friends for wanting a taste of our juicy, pink fleshed melons although if you are close to the habitat of natural animals you might want to protect your watermelons if you intend on eating them whole.',
           link : 'https://www.whataboutwatermelon.com/index.php/2018/04/watermelon-snack-fit-grizzly-bear-friends/'
+        },
+        {
+          id: '16',
+          category: "Movies",
+          date: "30/5/2021",
+          price: 109,
+          title : "Paddington the Movie",
+          caption: 'Marmalade Sandwiches. mmm', 
+          image: 'https://i.pinimg.com/originals/a9/b9/ef/a9b9eff4d9ba313341a604bee220b422.jpg',
+          text: 'Come and join Paddington in his coming of age story! And he always keeps a marmalade sandwich under his hat, in case of emergencies. Join our discord channel to watch this movie',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '17',
+          category: "Travel",
+          date: "30/5/2021",
+          price: 109,
+          title : "Travel tips!",
+          caption: 'Wanderlust!', 
+          image: 'https://i.pinimg.com/236x/76/12/49/76124946f79c149749f062e536bc202e--safety-first-dog-safety.jpg',
+          text: 'Forgot how to travel? Come and join us on this seminar to learn tips and tricks for travelling easy!',
+          link : 'https://steamcommunity.com/id/Magfuse'
         },
 ];
 
