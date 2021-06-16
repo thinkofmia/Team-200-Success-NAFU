@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text, Image, Linking, FlatList, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { color } from 'react-native-reanimated';
 
   const Item = ({ item, onPress, backgroundColor, textColor, fontWeight }) => (
     <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
@@ -16,8 +17,8 @@ export default function Preferences({navigation}) {
     const forceUpdate = React.useCallback(() => updateState({}), []);
 
     const renderItem = ({ item }) => {
-        const backgroundColor = global.userPreferences.includes(item) ? "#6e3b6e" : "#f9c2ff";
-        const color = global.userPreferences.includes(item) ? 'white' : 'black';
+        const backgroundColor = global.userPreferences.includes(item) ? "#374a67" : "#616283";
+        const color = global.userPreferences.includes(item) ? 'white' : '#fde8e9';
         const fontWeight = global.userPreferences.includes(item) ? 'bold' : 'normal';
     
         return (
@@ -60,7 +61,7 @@ export default function Preferences({navigation}) {
 const styles=StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fde8e9',
     alignItems: 'center',
     justifyContent: 'center',
     width: "100%",
@@ -69,7 +70,6 @@ const styles=StyleSheet.create({
     width: "90%",
   },
   item: {
-    backgroundColor: '#f9c2ff',
     width: "90%",
     textAlign: 'center',
     justifyContent: "center",
@@ -92,6 +92,7 @@ const styles=StyleSheet.create({
     fontSize: 25,
     alignContent: "center",
     paddingBottom: 40,
-    paddingTop: 40
+    paddingTop: 40,
+    color: "#374a67"
   }
 })

@@ -26,8 +26,8 @@ export default class ComboBox extends Component {
 
 const styles = StyleSheet.create({
   dropdown: {
-    height: 30,
-    width: 300,
+    height: 26,
+    width: 270,
     marginTop: 10,
     padding: 10,
     textAlign:'left'
