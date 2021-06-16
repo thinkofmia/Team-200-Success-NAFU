@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
     return (
-    <Stack.Navigator headerMode='screen' screenOptions={{headerStyle:{ backgroundColor: '#ddddff' }}}> 
+    <Stack.Navigator headerMode='screen' screenOptions={{headerStyle:{ backgroundColor: '#658576' }}}> 
         <Stack.Screen 
           name="Home" 
           component={MainPage}

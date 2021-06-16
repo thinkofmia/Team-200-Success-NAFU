@@ -55,7 +55,7 @@ const HomeScreen = () => {
                 <Text> Category: {global.fakeArticle.category}</Text>
               </Text>
               <Text style={styles.eventsText}>{global.fakeArticle.text}</Text>
-              <Button onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
+              <Button backgroundColor= "#6f8576" onPress={() => Linking.openURL(global.fakeArticle.link)} title="Link to Party"/>
           </View>
       </Animated.ScrollView>
     </View>

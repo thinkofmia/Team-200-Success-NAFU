@@ -205,7 +205,7 @@ return (
         fontSize: 25,
         alignContent: "center",
         paddingBottom: 20,
-        paddingTop: 40,
+        paddingTop: 70,
         color: "#799cf6"
       },
     });
