@@ -42,7 +42,7 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
         {item.title} </Text>
       <View>
         <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
-          {item.price == 0 ? ":)" : item.price <20 ? "$" : item.price <100 ? "$$" : "$$$"
+          {item.price == 0 ? "Free" : item.price <20 ? "$" : item.price <100 ? "$$" : "$$$"
           } 
         </Text>
         <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
