@@ -18,8 +18,8 @@ export default function Preferences({navigation}) {
     const forceUpdate = React.useCallback(() => updateState({}), []);
 
     const renderItem = ({ item }) => {
-        const backgroundColor = global.userPreferences.includes(item) ? "#374a67" : "#616283";
-        const color = global.userPreferences.includes(item) ? '#fde8e9' : '#fde8e9';
+        const backgroundColor = global.userPreferences.includes(item) ? "#a06b6a" : "#ad807f";
+        const color = global.userPreferences.includes(item) ? '#fde8e9' : '#f9f4e1';
         const fontWeight = global.userPreferences.includes(item) ? 'bold' : 'normal';
     
         return (
@@ -63,7 +63,7 @@ export default function Preferences({navigation}) {
 const styles=StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fde8e9',
+    backgroundColor: '#f9f4e1',
     alignItems: 'center',
     justifyContent: 'center',
     width: "100%",
@@ -94,7 +94,7 @@ const styles=StyleSheet.create({
     fontSize: 25,
     alignContent: "center",
     paddingBottom: 40,
-    paddingTop: 40,
-    color: "#374a67"
+    paddingTop: 70,
+    color: "#ad807f"
   },
 })

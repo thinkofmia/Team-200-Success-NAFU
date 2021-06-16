@@ -130,6 +130,7 @@ const styles=StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     alignItems: 'center',
+    justifyContent: "center",
   },
   /*
   imgBackground:{
@@ -147,6 +148,7 @@ const styles=StyleSheet.create({
     fontWeight: "bold",
     marginTop: 20,
     textAlign: 'center',
+    padding: 10,
   },
   /*
   linkText: {
@@ -180,7 +182,7 @@ const styles=StyleSheet.create({
   },*/
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f9f4e1',
     alignItems: 'center',
     justifyContent: 'center',
   },
