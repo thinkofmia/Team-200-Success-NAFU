@@ -20,6 +20,7 @@ import { filterData, checkBookmarked } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
+const tileHeight = 7*screenWidth/16 + 50;
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "July", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
@@ -64,9 +65,10 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
     }>
         <Ionicons size={30} color="#f9f4e1" style={styles.bookmarks} name={bookmarkBoolean ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
       </TouchableHighlight>
-      <Text ellipsizeMode = "tail" numberOfLines = {3} style={[styles.title, textColor]} >
+      <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
         {item.title} </Text>
-      <View>
+    </View>
+    <View style={styles.textContent}>
         <Text ellipsizeMode = "tail" style={[styles.title, textColor]} >
           {item.price == 0 ? "Free" : item.price <20 ? "$" : item.price <100 ? "$$" : "$$$"
           } 
@@ -75,7 +77,6 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
           {item.date.getDate()}/{item.date.getMonth()+1}/{item.date.getFullYear()}
         </Text>
       </View>
-    </View>
   </TouchableOpacity>
 );
 
@@ -176,12 +177,10 @@ return (
     },
     item: {
       backgroundColor: "#dc8db9",
-      width: "40%",
-      height: 360,
       textAlign: 'center',
       marginVertical: 8,
       marginHorizontal: 8,
-      height: tileSize, 
+      height: tileHeight, 
       width: tileSize, 
       padding: 2,
       alignContent: "center",
