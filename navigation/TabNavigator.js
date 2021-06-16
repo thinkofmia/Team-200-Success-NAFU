@@ -33,9 +33,9 @@ const BottomTabNavigator = () => {
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
       }}>
-      <Tab.Screen name="Home" component={MainStackNavigator} />
-      <Tab.Screen name="Bookmarks" component={BookmarksStackNavigator} />
       <Tab.Screen name="Preferences" component={SettingsStackNavigator} />
+      <Tab.Screen name="Home" component={MainStackNavigator} />
+      <Tab.Screen name="Bookmarks" component={BookmarksStackNavigator} />  
     </Tab.Navigator>
   );
 };
