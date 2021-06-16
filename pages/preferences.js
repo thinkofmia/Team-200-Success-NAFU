@@ -3,9 +3,9 @@ import { View, StyleSheet, Text, Image, Linking, FlatList, TouchableOpacity } fr
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-  const Item = ({ item, onPress, backgroundColor, textColor }) => (
+  const Item = ({ item, onPress, backgroundColor, textColor, fontWeight }) => (
     <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-      <Text style={[styles.title, textColor]}>{item}</Text>
+      <Text style={[styles.title, textColor, fontWeight]}>{item}</Text>
     </TouchableOpacity>
   );
 
@@ -18,11 +18,12 @@ export default function Preferences({navigation}) {
     const renderItem = ({ item }) => {
         const backgroundColor = global.userPreferences.includes(item) ? "#6e3b6e" : "#f9c2ff";
         const color = global.userPreferences.includes(item) ? 'white' : 'black';
+        const fontWeight = global.userPreferences.includes(item) ? 'bold' : 'normal';
     
         return (
           <Item
             item={item}
-            onPress={() => {
+            onPress={() => { 
               var index = global.userPreferences.indexOf(item);
               if (index > -1) {global.userPreferences.splice(index, 1);
             }
@@ -33,8 +34,10 @@ export default function Preferences({navigation}) {
           }
           
         }
+            fontWeight = {{fontWeight}}       
             backgroundColor={{ backgroundColor }}
             textColor={{ color }}
+            
           />
         );
       };
@@ -43,6 +46,7 @@ export default function Preferences({navigation}) {
     <View style={styles.container}>
         <Text style={styles.eventsHeader}>Select your preferences</Text>
         <FlatList
+        
             style = {styles.list}
             data={global.preferenceList}
             renderItem={renderItem}
@@ -68,16 +72,26 @@ const styles=StyleSheet.create({
     backgroundColor: '#f9c2ff',
     width: "90%",
     textAlign: 'center',
-    marginVertical: 8,
+    justifyContent: "center",
+    marginVertical: 10,
     marginHorizontal: 16,
-    borderRadius: 20,
+    borderRadius: 40,
+    height: 50
   },
   title: {
-    fontSize: 32,
+    fontSize: 25,
     textAlign: 'center',
+    padding: 10
   },
   thumbnails: {
     width: "100%",
     height: "70%",
   },
+  eventsHeader: {
+    fontWeight: "bold",
+    fontSize: 25,
+    alignContent: "center",
+    paddingBottom: 40,
+    paddingTop: 40
+  }
 })
