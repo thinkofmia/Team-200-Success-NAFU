@@ -48,7 +48,7 @@ export default function Bookmarks({navigation}) {
     const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#ccf5f5',
         alignItems: 'center',
         justifyContent: 'center',
       },
