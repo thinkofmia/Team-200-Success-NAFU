@@ -33,7 +33,7 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
       <TouchableHighlight onPress={() => {
         pushPopBookmarkedArticle(item, changeState, bookmarkBoolean)}
     }>
-        <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkBoolean ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
+        <Ionicons size={30} color="#f9f4e1" style={styles.bookmarks} name={bookmarkBoolean ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
       </TouchableHighlight>
       <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
         {item.title} </Text>
@@ -90,7 +90,7 @@ export default function MainPage({navigation}) {
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
-      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#eb98ac";
+      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#6f8576";
       const color = item.id === selectedId ? 'black' : '#f9f4e1';
       const bookmarked = checkBookmarked(item);
       const bmFill = setBookmark ? 'ios-bookmark' : 'ios-bookmark-outline';

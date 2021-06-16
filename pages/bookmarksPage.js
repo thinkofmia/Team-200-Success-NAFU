@@ -33,7 +33,7 @@ const Item = ({ item, onPress, backgroundColor, textColor, bookmarkFill, changeS
       <TouchableHighlight onPress={() => {
         pushPopBookmarkedArticle(item, bookmarkBoolean)}
     }>
-        <Ionicons size={30} color="#fff" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
+        <Ionicons size={30} color="#f9f4e1" style={styles.bookmarks} name={bookmarkFill['bmFill']}/>
       </TouchableHighlight>
       <Text ellipsizeMode = "tail" numberOfLines = {2} style={[styles.title, textColor]} >
         {item.title} </Text>
@@ -90,8 +90,8 @@ export default function MainPage({navigation}) {
   //global.selectedArticle = selectedId;
 
   const renderItem = ({ item }) => {
-      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#374a67";
-      const color = item.id === selectedId ? 'black' : '#d7dfea';
+      const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#a3bcf9";
+      const color = item.id === selectedId ? 'black' : '#f9f4e1';
       const bookmarked = checkBookmarked(item);
       const bmFill = bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline';
       
@@ -127,7 +127,7 @@ return (
     const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: '#ccf5f5',
+        backgroundColor: '#f9f4e1',
         alignItems: 'center',
         justifyContent: 'center',
       },
@@ -170,7 +170,7 @@ return (
         alignContent: "center",
         paddingBottom: 20,
         paddingTop: 40,
-        color: "#374a67"
+        color: "#799cf6"
       },
     });
     
