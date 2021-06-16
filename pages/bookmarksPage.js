@@ -111,6 +111,7 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <Text style={styles.bookmarkHeader}>Bookmarks</Text>
       <FlatList 
           data={global.bookmarkedArticles} 
           renderItem={renderItem}
@@ -157,11 +158,19 @@ return (
         width: "100%",
         height: "70%",
         borderTopLeftRadius: 15,
-        borderTopRightRadius: 15
+        borderTopRightRadius: 15,
       },
       textContent: {
         display: 'flex',
         flexDirection: 'row'
-      }
+      },
+      bookmarkHeader: {
+        fontWeight: "bold",
+        fontSize: 25,
+        alignContent: "center",
+        paddingBottom: 20,
+        paddingTop: 40,
+        color: "#374a67"
+      },
     });
     

@@ -96,5 +96,5 @@ const styles=StyleSheet.create({
     paddingBottom: 40,
     paddingTop: 40,
     color: "#374a67"
-  }
+  },
 })
