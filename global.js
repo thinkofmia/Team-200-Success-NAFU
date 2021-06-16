@@ -442,7 +442,7 @@ global.fakeArticle = {
   link : 'https://www.theatlantic.com/photo/2018/02/animals-on-the-playing-field/552134/'
 };
 
-global.bookmarkedArticles = [global.fakeArticle];
+global.bookmarkedArticles = [];
 
 /*
 const configuration = {
