@@ -1,16 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Animated, View, StyleSheet, Text, Image, Linking, Button, ScrollView } from 'react-native';
+import { Animated, View, StyleSheet, Text, Image, Linking, Button, ScrollView, TouchableHighlight } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 //import TopNavigation from './top-navigation';
+
+import { checkBookmarked } from '../scripts/filter';
+import { pushPopBookmarkedArticle } from './bookmarksPage';
 
 // define some constant
 const BANNER_H = 350;
 
 const HomeScreen = () => {
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
   const scrollA = useRef(new Animated.Value(0)).current;
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
   ];
+  const bookmarked = checkBookmarked(global.fakeArticle);
 
   return (
     <View>
@@ -33,7 +40,16 @@ const HomeScreen = () => {
               <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
               
               <Text style={{ flexDirection: 'row', justifyContent: 'space-between', marginLeft: 17, textAlign:'center'}}>
-                <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name='ios-bookmarks'/>
+              <TouchableHighlight onPress={() => {
+                    pushPopBookmarkedArticle(global.fakeArticle, bookmarked);
+                    setTimeout(
+                      () => forceUpdate(),
+                      600
+                    );
+                  }
+                }>
+                    <Ionicons size={30} color="#4F8EF7" style={styles.bookmarks} name={bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline'}/>
+                </TouchableHighlight>
                 <Text style={styles.subHeader}>Price: ${global.fakeArticle.price}</Text>
               </Text>
               <Text style={styles.subHeader}> Date: {global.fakeArticle.date.getDate()} {monthNames[global.fakeArticle.date.getMonth()]} {global.fakeArticle.date.getFullYear()} | Category: {global.fakeArticle.category}</Text>
