@@ -32,7 +32,7 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
         fadeAnim,
         {
           toValue: 1,
-          duration: 1000,
+          duration: 700,
         }
       ).start();
     }, [fadeAnim])
