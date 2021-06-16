@@ -29,6 +29,8 @@ global.userPreferences = [];
 global.selectedArticle = 0;
 global.bookmarkedArticle = [];
 
+global.preferenceList = ['Food', 'Romance', 'Sports', 'Family', 'Movies', 'Travel'];
+
 global.fakeFeed = [
   {
     id : "0",
@@ -118,6 +120,111 @@ global.fakeFeed = [
         image: 'https://scx2.b-cdn.net/gfx/news/hires/2020/careforcatss.jpg',
         text: 'A new programming language has been discovered! Researchers have look at the genetics of cats and surprisingly they realised that cats have the ability to code, just like mankind. They have the capability to adapt, improvise and overcome those challenges infused with complex logical thinking. Introducing the new programming language MaoScript, a new programming language cater to communicate with cats. This programming language have the capability to use Cats Intelligence framework to learn a deep neural cats network all thanks to the PyKatze package. Available at the price of $109. Don\'t wait, get yours today!',
         link : 'https://steamcommunity.com/id/Magfuse'
+        },
+
+        {
+          id: '8',
+          category: "Travel",
+          date: "12/8/2020",
+          price: 200,
+          title : "Boxplane invented in 2020",
+          image: 'https://cdn5.vectorstock.com/i/1000x1000/95/79/teddy-bear-made-plane-vector-3069579.jpg',
+          text: 'Introducing boxplane. The world leading environmentally friendly plane made of cardboard and paper. Endorsed by Park Ranger Patricia, this cardboard plane is said to be able to travel for at most 1km! Limited seat available! ',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '9',
+          category: "Romance",
+          date: "22/10/2011",
+          price: 10,
+          title : "Of Fire and Ice",
+          image: 'https://i.dailymail.co.uk/i/pix/2014/07/14/article-0-1FA10FF600000578-698_634x397.jpg',
+          text: 'Ever heard of two opposites coming together to mate? Meet Mr Blue and Mrs Brown. Two lizards of two distinct breed, coming to the walls of hive for their once in a blue moon mating season. Join them, as you get a preview of their honeymoon 24/7. ',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '10',
+          category: "Food",
+          date: "13/8/2009",
+          price: 50,
+          title : "Cattegetti",
+          image: 'https://i.ytimg.com/vi/tOg9wzhQWLU/maxresdefault.jpg',
+          text: 'Watch as Munchkin, cat of Jurong East munch on what it seems to be a spagetthi. Freshly served from the ovens of some wild peanuts, Munchkins owner can only be frightened of whats next. Join the food session below. ',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '11',
+          category: "Family",
+          date: "3/1/2019",
+          price: 1000,
+          title : "White 'Sheep' of the Breed",
+          image: 'https://barkpost.com/wp-content/uploads/2015/06/dog-family-reunion-2.jpg',
+          text: 'Amongthe family of four, one particular dog grows with a different fur from her siblings. Meet Amily. The cutest and upcoming shepherd leading Mianna Ranch at the stunning age of 4! Visit the ranch today in the link below. ',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '12',
+          category: "Movies",
+          date: "18/12/2008",
+          price: 12,
+          title : "Ratatouille 2",
+          image: 'https://www.wired.com/images_blogs/underwire/images/2007/04/30/043007ratatouilee.jpg',
+          text: 'Ratatouille is back, with more cooking action, dishes, wild pulling of hairs and chef manipulation! Get the tickets today!',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '13',
+          category: "Travel",
+          date: "8/1/2021",
+          price: 900,
+          title : "Journey of the Hermit Seal",
+          image: 'https://stickershop.line-scdn.net/stickershop/v1/product/7359238/LINEStorePC/main.png;compress=true',
+          text: 'Written by your one and only Mianna, the story covers a seal named Lilzzy as she travels around the artic ocean looking for a place called home. To purchase the pre-order of the book, click on the link below.',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '14',
+          category: "Family",
+          date: "30/5/2021",
+          price: 109,
+          title : "Dance Party!",
+          caption: 'Bears Dancing in the Forest', 
+          image: 'https://static.boredpanda.com/blog/wp-content/uploads/2020/02/dancing-baby-bears-cubs-photography-valtteri-mulkahainen-1-1-5e46a1f555003__700.jpg',
+          text: 'As winter turns to spring and the bears stop hibernating, they need to shed their winter coats the only way they know how. Come and Join the dance party!',
+          link : 'https://www.youtube.com/watch?v=ddq42IRjK3E'
+        },
+        {
+          id: '15',
+          category: "Food",
+          date: "30/5/2021",
+          price: 109,
+          title : "Watermelon – A Snack Fit for our Grizzly Bear Friends",
+          caption: 'What About Watermelons?', 
+          image: 'https://i.pinimg.com/564x/7b/96/5a/7b965a62b066e0b1f9902a2c137c134b.jpg',
+          text: 'Us humans are not the only watermelon lovers in the world. Did you know that bears love watermelon too? Watermelons hold moisture making them a popular choice for a range of animals that have fallen water poor in drought conditions. We don’t blame our furry friends for wanting a taste of our juicy, pink fleshed melons although if you are close to the habitat of natural animals you might want to protect your watermelons if you intend on eating them whole.',
+          link : 'https://www.whataboutwatermelon.com/index.php/2018/04/watermelon-snack-fit-grizzly-bear-friends/'
+        },
+        {
+          id: '16',
+          category: "Movies",
+          date: "30/5/2021",
+          price: 109,
+          title : "Paddington the Movie",
+          caption: 'Marmalade Sandwiches. mmm', 
+          image: 'https://i.pinimg.com/originals/a9/b9/ef/a9b9eff4d9ba313341a604bee220b422.jpg',
+          text: 'Come and join Paddington in his coming of age story! And he always keeps a marmalade sandwich under his hat, in case of emergencies. Join our discord channel to watch this movie',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '17',
+          category: "Travel",
+          date: "30/5/2021",
+          price: 109,
+          title : "Travel tips!",
+          caption: 'Wanderlust!', 
+          image: 'https://i.pinimg.com/236x/76/12/49/76124946f79c149749f062e536bc202e--safety-first-dog-safety.jpg',
+          text: 'Forgot how to travel? Come and join us on this seminar to learn tips and tricks for travelling easy!',
+          link : 'https://steamcommunity.com/id/Magfuse'
         },
 ];
 
