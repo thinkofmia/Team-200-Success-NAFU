@@ -38,9 +38,8 @@ const HomeScreen = () => {
           </View>
           <View style={styles.flexContainer}>
               <Text style={styles.eventsHeader}>{global.fakeArticle.title}</Text>
-              
-              <Text style={{ flexDirection: 'row', justifyContent: 'space-between', marginLeft: 17, textAlign:'center'}}>
-              <TouchableHighlight onPress={() => {
+              <Text style={{  justifyContent: 'space-between', textAlign:'center'}}>
+              <TouchableHighlight style={styles.bookmarkWrapper} onPress={() => {
                     pushPopBookmarkedArticle(global.fakeArticle, bookmarked);
                     setTimeout(
                       () => forceUpdate(),
@@ -121,11 +120,11 @@ const styles=StyleSheet.create({
     width: 50,
     height: 50,
     marginBottom: 0,
-    marginLeft: 100,
+    marginLeft: 0,
   },
   bookmarkText: {
     marginBottom: 5,
-    marginLeft: 15,
+    marginLeft: 0,
     fontSize: 16,
   },
   /*
