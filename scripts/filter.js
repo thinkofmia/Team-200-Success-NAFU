@@ -22,9 +22,11 @@ export function filterData(listArray, filterOptions, categories){
             break;
         
         case 'Sort by Date: Oldest':
+            tempArr.sort((a, b) => a.date - b.date);
             break;
         case 'Sort by Date: Latest':
         default:
+            tempArr.sort((a, b) => b.date - a.date);
             break;
     }
 
