@@ -29,7 +29,7 @@ global.userPreferences = [];
 global.selectedArticle = 0;
 global.bookmarkedArticle = [];
 
-global.preferenceList = ['Food', 'Romance', 'Sports', 'Family', 'Movies', 'Travel'];
+global.preferenceList = ['Food', 'Romance', 'Sports', 'Family', 'Movies', 'Travel', 'Arts', 'Education', 'Networking'];
 
 global.fakeFeed = [
   {
@@ -120,6 +120,309 @@ global.fakeFeed = [
         image: 'https://scx2.b-cdn.net/gfx/news/hires/2020/careforcatss.jpg',
         text: 'A new programming language has been discovered! Researchers have look at the genetics of cats and surprisingly they realised that cats have the ability to code, just like mankind. They have the capability to adapt, improvise and overcome those challenges infused with complex logical thinking. Introducing the new programming language MaoScript, a new programming language cater to communicate with cats. This programming language have the capability to use Cats Intelligence framework to learn a deep neural cats network all thanks to the PyKatze package. Available at the price of $109. Don\'t wait, get yours today!',
         link : 'https://steamcommunity.com/id/Magfuse'
+        },
+
+        {
+          id: '8',
+          category: "Travel",
+          date: "12/8/2020",
+          price: 200,
+          title : "Boxplane invented in 2020",
+          image: 'https://cdn5.vectorstock.com/i/1000x1000/95/79/teddy-bear-made-plane-vector-3069579.jpg',
+          text: 'Introducing boxplane. The world leading environmentally friendly plane made of cardboard and paper. Endorsed by Park Ranger Patricia, this cardboard plane is said to be able to travel for at most 1km! Limited seat available! ',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '9',
+          category: "Romance",
+          date: "22/10/2011",
+          price: 10,
+          title : "Of Fire and Ice",
+          image: 'https://i.dailymail.co.uk/i/pix/2014/07/14/article-0-1FA10FF600000578-698_634x397.jpg',
+          text: 'Ever heard of two opposites coming together to mate? Meet Mr Blue and Mrs Brown. Two lizards of two distinct breed, coming to the walls of hive for their once in a blue moon mating season. Join them, as you get a preview of their honeymoon 24/7. ',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '10',
+          category: "Food",
+          date: "13/8/2009",
+          price: 50,
+          title : "Cattegetti",
+          image: 'https://i.ytimg.com/vi/tOg9wzhQWLU/maxresdefault.jpg',
+          text: 'Watch as Munchkin, cat of Jurong East munch on what it seems to be a spagetthi. Freshly served from the ovens of some wild peanuts, Munchkins owner can only be frightened of whats next. Join the food session below. ',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '11',
+          category: "Family",
+          date: "3/1/2019",
+          price: 1000,
+          title : "White 'Sheep' of the Breed",
+          image: 'https://barkpost.com/wp-content/uploads/2015/06/dog-family-reunion-2.jpg',
+          text: 'Amongthe family of four, one particular dog grows with a different fur from her siblings. Meet Amily. The cutest and upcoming shepherd leading Mianna Ranch at the stunning age of 4! Visit the ranch today in the link below. ',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '12',
+          category: "Movies",
+          date: "18/12/2008",
+          price: 12,
+          title : "Ratatouille 2",
+          image: 'https://www.wired.com/images_blogs/underwire/images/2007/04/30/043007ratatouilee.jpg',
+          text: 'Ratatouille is back, with more cooking action, dishes, wild pulling of hairs and chef manipulation! Get the tickets today!',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '13',
+          category: "Travel",
+          date: "8/1/2021",
+          price: 900,
+          title : "Journey of the Hermit Seal",
+          image: 'https://stickershop.line-scdn.net/stickershop/v1/product/7359238/LINEStorePC/main.png;compress=true',
+          text: 'Written by your one and only Mianna, the story covers a seal named Lilzzy as she travels around the artic ocean looking for a place called home. To purchase the pre-order of the book, click on the link below.',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '14',
+          category: "Family",
+          date: "30/5/2021",
+          price: 109,
+          title : "Dance Party!",
+          caption: 'Bears Dancing in the Forest', 
+          image: 'https://static.boredpanda.com/blog/wp-content/uploads/2020/02/dancing-baby-bears-cubs-photography-valtteri-mulkahainen-1-1-5e46a1f555003__700.jpg',
+          text: 'As winter turns to spring and the bears stop hibernating, they need to shed their winter coats the only way they know how. Come and Join the dance party!',
+          link : 'https://www.youtube.com/watch?v=ddq42IRjK3E'
+        },
+        {
+          id: '15',
+          category: "Food",
+          date: "30/5/2021",
+          price: 109,
+          title : "Watermelon – A Snack Fit for our Grizzly Bear Friends",
+          caption: 'What About Watermelons?', 
+          image: 'https://i.pinimg.com/564x/7b/96/5a/7b965a62b066e0b1f9902a2c137c134b.jpg',
+          text: 'Us humans are not the only watermelon lovers in the world. Did you know that bears love watermelon too? Watermelons hold moisture making them a popular choice for a range of animals that have fallen water poor in drought conditions. We don’t blame our furry friends for wanting a taste of our juicy, pink fleshed melons although if you are close to the habitat of natural animals you might want to protect your watermelons if you intend on eating them whole.',
+          link : 'https://www.whataboutwatermelon.com/index.php/2018/04/watermelon-snack-fit-grizzly-bear-friends/'
+        },
+        {
+          id: '16',
+          category: "Movies",
+          date: "30/5/2021",
+          price: 109,
+          title : "Paddington the Movie",
+          caption: 'Marmalade Sandwiches. mmm', 
+          image: 'https://i.pinimg.com/originals/a9/b9/ef/a9b9eff4d9ba313341a604bee220b422.jpg',
+          text: 'Come and join Paddington in his coming of age story! And he always keeps a marmalade sandwich under his hat, in case of emergencies. Join our discord channel to watch this movie',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '17',
+          category: "Travel",
+          date: "30/5/2021",
+          price: 109,
+          title : "Travel tips!",
+          caption: 'Wanderlust!', 
+          image: 'https://i.pinimg.com/236x/76/12/49/76124946f79c149749f062e536bc202e--safety-first-dog-safety.jpg',
+          text: 'Forgot how to travel? Come and join us on this seminar to learn tips and tricks for travelling easy!',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '18',
+          category: "Arts",
+          date: "30/5/2021",
+          price: 109,
+          title : "Painting Lessons",
+          caption: 'Get your creative juices flowing!', 
+          image: 'https://ychef.files.bbci.co.uk/976x549/p023h4r0.jpg',
+          text: 'A few animals are prodigious producers of ‘art’, says Jason G Goldman. Why do they do it? Do they enjoy the creative process? And is their work any good? Join us to find out. ',
+          link : 'https://www.bbc.com/future/article/20140723-are-we-the-only-creative-species'
+        },
+        {
+          id: '19',
+          category: "Arts",
+          date: "30/5/2021",
+          price: 109,
+          title : "The Smithsonian",
+          caption: 'The world before us.', 
+          image: 'https://thumbs-prod.si-cdn.com/9_8_yfXMWM3RAVpxcWIhhVdmNbs=/800x600/filters:no_upscale():focal(1475x902:1476x903)/https://public-media.si-cdn.com/filer/45/ff/45ff2eeb-f5c5-49a9-8664-9b9f10a263bd/nhmuseum.jpg',
+          text: 'The Hidden Biases That Shape Natural History Museums. Here’s why museum visitors rarely see lady animals, penis bones or cats floating in formaldehyde',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '20',
+          category: "Arts",
+          date: "30/5/2021",
+          price: 109,
+          title : "Museums for Otakus",
+          caption: 'Otaku!', 
+          image: 'https://resize.cdn.otakumode.com/full/u/69d8e57c47c945caa9456c1ebc200578.jpg',
+          text: 'For some reason, there’s a stereotype that museums are full of old, dusty things or weird paintings. If you don’t have an interest in antiques or people who are dead and gone, they might not be the place for you. However, there are a few museums in Japan that have dedicated themselves to the preservation and teaching of… pop culture?!',
+          link : 'https://otakumode.com/news/59bb783b9b55bb957392b8d6/8-Fascinating-Museums-for-Anime-and-Manga-Lovers!'
+        },
+        {
+          id: '21',
+          category: "Arts",
+          date: "30/5/2021",
+          price: 109,
+          title : "Painting with Elephants",
+          caption: 'Can animals ever be artists?', 
+          image: 'https://i.ytimg.com/vi/nKoPYPA7T0g/maxresdefault.jpg',
+          text: 'In my time I have seen some pretty strange things parading as art – I still vividly remember the sawn-up sharks and cows in Damien Hirst’s Sensation Exhibition. Beauty and art I guess is in the eye of the beholder. What I consider to be art you may well think of as a pile of rubbish, and indeed it may actually be someone’s junk.',
+          link : 'https://theconversation.com/can-animals-ever-be-artists-39296'
+        },
+        {
+          id: '22',
+          category: "Education",
+          date: "30/5/2021",
+          price: 109,
+          title : "Learn Mathematics",
+          caption: 'Animals can do ‘almost math’', 
+          image: 'https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_animalmath_main.png',
+          text: 'Scientists are searching for the evolutionary roots of human math in the barnyard and the zoo',
+          link : 'https://www.sciencenewsforstudents.org/article/animals-can-do-almost-math'
+        },
+        {
+          id: '23',
+          category: "Education",
+          date: "30/5/2021",
+          price: 109,
+          title : "Using Technology is easy!",
+          caption: 'Become savvy with Technology', 
+          image: 'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555357380/shape/mentalfloss/talking-animals-primary.png',
+          text: 'Scientists are Designing Technology to Help Animals ‘Talk’',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '24',
+          category: "Education",
+          date: "30/5/2021",
+          price: 109,
+          title : "Tech dogs!!!",
+          caption: 'Learn to code', 
+          image: 'https://images.ctfassets.net/cnu0m8re1exe/4TXPSuyr3UeJD95kPx4h79/f471ec4a7e0217252dce64769549f45a/shutterstock_211047976-1024x682.jpg',
+          text: 'Technology has gone to the dogs. Humans aren’t the only animals who benefit from technology, and the emerging field of animal-computer interactions (ACI) seeks to understand how animals interact with human-made technology in order to adapt tools to animals’ innate characteristics.',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '25',
+          category: "Education",
+          date: "30/5/2021",
+          price: 109,
+          title : "Learning doggos",
+          caption: 'How to be a good boy?', 
+          image: 'https://i.ytimg.com/vi/Fxn0ZhycKPw/maxresdefault.jpg',
+          text: 'The video above is about a really Smart boy who does a presentation on a huge topic, that consists on how to be a good boy, such a really astonishing dog!',
+          link : 'https://www.youtube.com/watch?v=Fxn0ZhycKPw'
+        },
+        {
+          id: '26',
+          category: "Networking",
+          date: "30/5/2021",
+          price: 109,
+          title : "Travel tips!",
+          caption: 'Wanderlust!', 
+          image: 'https://i.pinimg.com/236x/76/12/49/76124946f79c149749f062e536bc202e--safety-first-dog-safety.jpg',
+          text: 'Forgot how to travel? Come and join us on this seminar to learn tips and tricks for travelling easy!',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '27',
+          category: "Networking",
+          date: "30/5/2021",
+          price: 109,
+          title : "The power of networking",
+          caption: 'Learn how to network', 
+          image: 'https://www.marketingdonut.co.uk/sites/default/files/the-power-of-networking-512279776.jpg',
+          text: 'Let us define networking in a nutshell: it is a business and personal marketing tool that will deliver your overall business and marketing strategy.',
+          link : 'https://www.marketingdonut.co.uk/exhibitions-and-events/networking/the-power-of-networking'
+        },
+        {
+          id: '28',
+          category: "Networking",
+          date: "30/5/2021",
+          price: 109,
+          title : "Social Networking for dummies",
+          caption: 'Social Networking?', 
+          image: 'https://zidbits.com/wp-content/uploads/2011/07/animal-social-networking.jpg',
+          text: 'Studies in sociology on Facebook and Twitter have been adapted to gain a better understanding of the swarming behavior and pattern of locusts.',
+          link : 'https://zidbits.com/2011/07/do-other-animals-use-a-form-of-social-networking/'
+        },
+        {
+          id: '29',
+          category: "Networking",
+          date: "30/5/2021",
+          price: 109,
+          title : "Working like Ants",
+          caption: 'Ants teach networking', 
+          image: 'https://miro.medium.com/max/2400/0*IbklcoRPM2ujFqJy.jpg',
+          text: 'Joinj us to learn about working in a team.',
+          link : 'https://mkrdiop.medium.com/ants-teach-networking-58bc73cd5465'
+        },
+        {
+          id: '30',
+          category: "Romance",
+          date: "30/5/2021",
+          price: 109,
+          title : "Tinder for dummies",
+          caption: 'Learning how to romance', 
+          image: 'https://www.whatshotnow.net/wp-content/uploads/14332381968223-the-25-most-romantic-animals-that-ever-lived-1-4218-1361989595-3_big.jpg',
+          text: 'Join us to learn how to effectively use Tinder!',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '31',
+          category: "Romance",
+          date: "30/5/2021",
+          price: 109,
+          title : "When to Let Go",
+          caption: 'Want Freedom?', 
+          image: 'https://www.whatshotnow.net/wp-content/uploads/14332381928269-enhanced-buzz-25490-1361928305-7.jpg',
+          text: 'When should you break up with someone? Click the link to find out!',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '32',
+          category: "Food",
+          date: "30/5/2021",
+          price: 109,
+          title : "Salt and Pepper",
+          caption: 'Cookiig time!', 
+          image: 'https://i.pinimg.com/originals/73/9b/f3/739bf39f56943091095147f3424b861b.jpg',
+          text: 'Learn to cook with us! Click the link to find out more.',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '33',
+          category: "Food",
+          date: "30/5/2021",
+          price: 109,
+          title : "Baking for Dummies",
+          caption: 'Buns in the oven', 
+          image: 'https://image.shutterstock.com/image-photo/dog-hat-offering-christmas-cakes-260nw-87842335.jpg',
+          text: 'Learn how to bake your favourite treats! Click on the link below.',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '34',
+          category: "Food",
+          date: "30/5/2021",
+          price: 109,
+          title : "How to eat Pasta",
+          caption: 'Eat pasta like a boss', 
+          image: 'https://eurovisionary.com/wp-content/uploads/2021/04/lady-and-the-tramp.jpg',
+          text: 'Come and learn how to effectively eat pasta. You will not eat pasta wrongly again!',
+          link : 'https://steamcommunity.com/id/Magfuse'
+        },
+        {
+          id: '35',
+          category: "Sports",
+          date: "30/5/2021",
+          price: 109,
+          title : "Playing Field",
+          caption: 'Jump!', 
+          image: 'https://cdn.theatlantic.com/thumbor/pa0Z9YjVvSl1afzqR1pqOGsIZpI=/600x393/media/img/photo/2018/02/animals-on-the-playing-field/a01_545766130/original.jpg',
+          text: 'Join us next week to jump higher!',
+          link : 'https://www.theatlantic.com/photo/2018/02/animals-on-the-playing-field/552134/'
         },
 ];
 

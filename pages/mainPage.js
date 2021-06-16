@@ -90,7 +90,7 @@ export default function MainPage({navigation}) {
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#21a0a0";
       const color = item.id === selectedId ? 'black' : 'black';
-      const bmFill = setBookmark ? 'ios-bookmarks' : 'ios-bookmarks-outline';
+      const bmFill = setBookmark ? 'ios-bookmark' : 'ios-bookmark-outline';
       
       return (
         <Item
@@ -107,7 +107,10 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <View style={styles.combo}>
+    <Ionicons size={50} color="red" style={styles.filter} name='ios-filter'/>
     <ComboBox />
+    </View>
       <FlatList
           data={filterData(global.fakeFeed, "none", global.userPreferences)} 
           renderItem={renderItem}
@@ -161,5 +164,15 @@ return (
       display: 'flex',
       flexDirection: 'row',
     },
+    combo: {
+      width: '90%',
+      textAlign: 'left',
+      alignItems: 'flex-start',
+      display: 'flex',
+      flexDirection:'row',
+    },
+    filter: {
+      padding: 10
+    }
   });
   

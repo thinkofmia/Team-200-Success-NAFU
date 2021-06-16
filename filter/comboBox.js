@@ -5,26 +5,30 @@ import { StyleSheet } from 'react-native';
 export default class ComboBox extends Component {
     render() {
       let data = [{
-        value: 'Banana',
+        value: 'Sort by Price: Descending',
       }, {
-        value: 'Mango',
+        value: 'Sort by Price: Ascending',
       }, {
-        value: 'Pear',
-      }];
+        value: 'Sort by Date: Latest',
+      }, {
+        value: 'Sort by Date: Oldest',
+      }
+    ];
    
       return (
-        <Dropdown style = {styles.container}
-          label='Favorite Fruit'
+        <Dropdown style = {styles.dropdown}
           data={data}
+          value = 'Sort by Date: Latest'
         />
       );
     }
   }
 
 const styles = StyleSheet.create({
-  container: {
-    height: 20,
-    width: 200,
+  dropdown: {
+    height: 30,
+    width: 300,
     marginTop: 10,
-    padding: 10
+    padding: 10,
+    textAlign:'left'
   }})
