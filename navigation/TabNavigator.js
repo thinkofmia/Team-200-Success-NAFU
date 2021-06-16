@@ -12,6 +12,21 @@ const BottomTabNavigator = () => {
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
         backgroundColor: 'red',
+        gestureDirection: 'horizontal',
+        cardStyleInterpolator: ({ current, layouts }) => {
+          return {
+            cardStyle: {
+              transform: [
+                {
+                  translateX: current.progress.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [layouts.screen.width, 0],
+                  }),
+                },
+              ],
+            },
+          };
+        },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -39,6 +54,7 @@ const BottomTabNavigator = () => {
     </Tab.Navigator>
   );
 };
+
 
 
 export default BottomTabNavigator;
