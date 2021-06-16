@@ -23,9 +23,9 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator headerMode='none'>
           <Stack.Screen name="Splash" component={Splash} />
-          <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
+          <Stack.Screen headerMode='none' name="BottomTabNavigator" component={BottomTabNavigator} />
       </Stack.Navigator>
       
     </NavigationContainer>
