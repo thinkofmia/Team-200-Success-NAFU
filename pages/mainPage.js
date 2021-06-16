@@ -151,7 +151,8 @@ return (
       padding: 2,
       flex: 0.9,
       textAlign: 'center',
-      fontSize: 13
+      fontSize: 13,
+      fontWeight: "bold"
     },
     thumbnails: {
       width: "100%",
@@ -161,7 +162,7 @@ return (
     },
     textContent: {
       display: 'flex',
-      flexDirection: 'row'
+      flexDirection: 'row',
     },
     combo: {
       width: '90%',
