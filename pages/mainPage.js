@@ -83,10 +83,9 @@ export default function MainPage({navigation}) {
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
 
-  
   setTimeout(
     () => forceUpdate(),
-    100
+    600
   )
   //global.selectedArticle = selectedId;
 

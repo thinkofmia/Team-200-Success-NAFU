@@ -86,7 +86,7 @@ export default function MainPage({navigation}) {
   
   setTimeout(
     () => forceUpdate(),
-    100
+    600
   )
   //global.selectedArticle = selectedId;
 
