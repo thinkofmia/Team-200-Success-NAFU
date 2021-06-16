@@ -2,6 +2,7 @@
 //import 'firebase/firestore';
 //import { useState } from 'react/cjs/react.production.min';
 import React, { useState, useEffect } from 'react';
+import { filterData } from './scripts/filter';
 
 global.bookmarked = [
   {
@@ -30,6 +31,8 @@ global.selectedArticle = 0;
 global.bookmarkedArticle = [];
 
 global.preferenceList = ['Food', 'Romance', 'Sports', 'Family', 'Movies', 'Travel', 'Arts', 'Education', 'Networking'];
+
+global.filterOption = 'Sort by Date: Latest';
 
 global.fakeFeed = [
   {
@@ -425,6 +428,8 @@ global.fakeFeed = [
           link : 'https://www.theatlantic.com/photo/2018/02/animals-on-the-playing-field/552134/'
         },
 ];
+
+global.displayFeed = filterData(global.fakeFeed, global.filterOption, global.userPreferences);
 
 global.fakeArticle = {
   id : "1",

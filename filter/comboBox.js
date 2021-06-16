@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Dropdown } from 'react-native-material-dropdown-v2';
 import { StyleSheet } from 'react-native';
+import { filterData } from '../scripts/filter';
 
 export default class ComboBox extends Component {
     render() {
@@ -18,10 +19,20 @@ export default class ComboBox extends Component {
       return (
         <Dropdown style = {styles.dropdown}
           data={data}
-          value = 'Sort by Date: Latest'
+          value = {global.filterOption}
+          onChangeText = {() => {
+            global.displayFeed = filterData(global.fakeFeed, global.filterOption, global.userPreferences);
+            value => this.onChangeHandler(value)
+        }}
         />
       );
     }
+    
+  }
+
+  const onChangeHandler = (value) => {
+    global.filterOption = value;
+    console.log(`Selected value: ${value}`);
   }
 
 const styles = StyleSheet.create({

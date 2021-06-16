@@ -12,5 +12,6 @@ export function filterData(listArray, filterOptions, categories){
     filteredArr = tempArr;
     //console.log("Filtered Array: ")
     //console.log(filteredArr);
+    console.log(filterOptions)
     return filteredArr;
 }

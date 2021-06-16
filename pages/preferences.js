@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text, Image, Linking, FlatList, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { filterData } from '../scripts/filter';
 
   const Item = ({ item, onPress, backgroundColor, textColor }) => (
     <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
@@ -28,6 +29,7 @@ export default function Preferences({navigation}) {
             }
               else {global.userPreferences.push(item);}
               console.log(global.userPreferences);
+              global.displayFeed = filterData(global.fakeFeed, global.filterOption, global.userPreferences);
               setRefreshPage("refresh");
               forceUpdate();
           }
