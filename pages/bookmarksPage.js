@@ -15,7 +15,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ComboBox from '../filter/comboBox';
 
-import { filterData } from '../scripts/filter';
+import { checkBookmarked } from '../scripts/filter';
 
 const screenWidth = Dimensions.get("window").width;
 const tileSize = 7*screenWidth/16;
@@ -93,7 +93,9 @@ export default function MainPage({navigation}) {
   const renderItem = ({ item }) => {
       const backgroundColor = item.id === selectedId ?  "#fcfff7" : "#374a67";
       const color = item.id === selectedId ? 'black' : '#d7dfea';
-      const bmFill = setBookmark ? 'ios-bookmark' : 'ios-bookmark-outline';
+      const bookmarked = checkBookmarked(item);
+      const bmFill = bookmarked ? 'ios-bookmark' : 'ios-bookmark-outline';
+      
       
       return (
         <Item
@@ -103,7 +105,7 @@ export default function MainPage({navigation}) {
           textColor={{ color }}
           bookmarkFill={{ bmFill }}
           changeState={{ setSelectedBookmark }}
-          bookmarkBoolean={{ setBookmark }}
+          bookmarkBoolean={{ bookmarked }}
         />
       );
     };
