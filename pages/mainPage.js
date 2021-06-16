@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ComboBox from '../filter/comboBox';
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 import { filterData, checkBookmarked } from '../scripts/filter';
 
@@ -117,6 +118,7 @@ function checkItemExists(itemList, item){
 }
 
 export default function MainPage({navigation}) {
+
   const [selectedId, setSelectedId] = useState(null);
   const [setBookmark, setSelectedBookmark] = useState(false);
   const [, updateState] = React.useState();
@@ -150,6 +152,12 @@ export default function MainPage({navigation}) {
 
 return (
   <View style={styles.container}>
+    <GestureRecognizer
+    onSwipeUp={(state) => console.log(state)}
+    onSwipeDown={(state) => console.log(state)}
+    onSwipeLeft={(state) => console.log(state)}
+    onSwipeRight={(state) => console.log(state)}
+    >
     <FadeInView>
     <View style={styles.combo}>
       <Ionicons size={40} color="#6f8576" style={styles.filter} name='ios-filter'/>
@@ -164,6 +172,7 @@ return (
           changeState={setSelectedBookmark}
     />
     </FadeInView>
+    </GestureRecognizer>
   </View>
   );
   }
