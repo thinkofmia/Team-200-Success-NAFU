@@ -12,9 +12,7 @@ Creators:
 - Keith Wong
 
 ## Problem Statement
-In a post-pandemic new normal, trends in purchasing products and services through online means are likely to continue increasing due to the pandemic. The purchase of services online include shopping on eCommerce platforms and ordering food on food delivery platforms. A report has suggested that food delivery business in Southeast Asia have grown tremendously from 2019 to 2020 due to the numerous food deliveries fulfiled during the pandemic, and this increase is likely to continue post-pandemic.
-
-Businesses that do not have an online presence to offer the products and services are likely to have their businesses severely affected due to the recent shift in trends, and this includes our very own hawkers in Singapore's hawker centres that are not on food delivery platforms like GrabFood. Hence, we would like to help these hawkers by promoting their stalls in an accessible and friendly way.
+In a post-pandemic covid era, how can we adjust and adapt better to the new norms?
 
 ## New Norms
 <img height="400" alt="image" src=https://raw.githubusercontent.com/thinkofmia/Team-200-Success-NAFU/main/assets/new%20norms.PNG>
